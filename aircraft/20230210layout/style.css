@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* init */
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+
+
+/* body */
+div.wrap{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: skyblue;
+}
+div.wrap>ul>li{
+    background-color: red;
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+div>ol>li{
+    height: 100px;
+    background-color: blue;
+}
