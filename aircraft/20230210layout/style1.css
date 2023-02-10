@@ -1,8 +1,7 @@
 @charset "uft-8";
 /* init */
 *{margin: 0;padding: 0;box-sizing: border-box;}
-.clearfix:after{
-    content:""; display: block; clear: both;}
+.clearfix::after{content:""; display: block; clear: both;}
 
 
 li{list-style: none;}
@@ -19,9 +18,13 @@ li{list-style: none;}
     float:left;
     width: 100px;
     margin: 10px 20px;
-    border: 2px solid #000;
+    border-right: 2px solid blue;
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
 }
-
+.left:first-child{
+    border-left: 2px solid blue;
+}
 .right{
     float:right;
     width: 100px;
@@ -33,8 +36,8 @@ li{list-style: none;}
 
 a:link,a:visited{text-decoration: none; color: black;}
 
+s
+/* .class:first{border-left: 2px solid #000} */
 
-.class:first{border-left: 2px solid #000}
 
-
-.class:first-child{border-right: 2px solid #000}
+/* .class:first-child{border-right: 2px solid #000} */
