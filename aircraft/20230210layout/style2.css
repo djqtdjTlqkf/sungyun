@@ -1,0 +1,28 @@
+@charset "uft-8";
+
+/* init */
+*{margin: 0;padding: 0; box-sizing: border-box;}
+a:link,a:visited{text-decoration: none; color: black;}
+.clearfix::after{content: ""; display: block; clear: both;}
+li{list-style: none;}
+
+/* body */
+.line{
+    width: 1100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: pink;
+    border: 2px solid black;
+}
+.menu{
+    width: 20%;
+    height: 50px;
+    margin: 25px auto;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    float : left;
+}
+.menu:first-child{
+    border-left: 2px solid black;
+}
