@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        a:link, a:visited{text-decoration: none; color: black;}
+        .clearfix::after{content: ""; display: block; clear: both;}
+        /* header */
+        header{
+            width: 1000px;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding: 25px 25px;
+        }
+        .logo{
+            width: 70px;
+            height: 50px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .logo:hover{
+            background-color: blue;
+            color: blueviolet;
+            transition: 0.3s;
+        }
+
+        .menu:hover{
+            background-color: #ff0;
+            color:bisque;
+            transition: 0.3s;
+        }
+
+        .menu{
+            width: 25%;
+            height: 50px;
+            float: left;
+            background-color: aqua;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visualslider{
+            width: 1200px;
+            height: 250px;
+            background-color: #f0f;
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+
+        div{
+            width: 1000px;
+            height: 300px;
+            border: 2px solid black;
+            padding: 25px 25px;
+            margin: 0 auto;
+        }
+        .aside{
+            width: 400px;
+            height: 250px;
+            float: left;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content{
+            width: 500px;
+            height: 250px;
+            float: right;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer{
+            width: 1000px;
+            height: 150px;
+            background-color: #999;
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="#">logo</a></h1>
+        <ul class="clearfix">
+            <li class="menu"><a href="#">menu1</a></li>
+            <li class="menu"><a href="#">menu2</a></li>
+            <li class="menu"><a href="#">menu3</a></li>
+            <li class="menu"><a href="#">menu4</a></li>
+        </ul>
+    </header>
+    <div class="visualslider"><a href="#">visual slider</a></div>
+    <div>
+        <ul class="clerafix">
+            <li class="aside"><a href="#">aside</a></li>
+            <li class="content"><a href="#">content</a></li>
+        </ul>
+    </div>
+    <div class="footer"><a href="#">footer</a></div>
+</body>
+</html>
