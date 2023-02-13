@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .clearfix::after{content: ""; display: block; clear: both;}
+        a:link,a:visited{text-decoration: none; color: black;}
+        li{list-style: none;}
+
+        .line{
+            /* border: 2px solid black; */
+        }
+        .line{
+            width: 300px;
+            height: 100px;
+            margin: 0 auto;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            position: relative;
+        }
+        .line .menu1{
+            width: 100px;
+            margin: 0 auto;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            border-right: 2px solid black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            position: absolute;
+            left: 0;
+        }
+        .line .menu2{
+            width: 100px;
+            margin: 0 auto;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            border-right: 2px solid black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            position: absolute;
+            right: 50px;
+        }
+        .line .menu:hover{
+            background-color: red;
+            color: white;
+            transition: 0.3s;
+        }
+        .line .menu:first-child{
+            border-left: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="line clearfix">
+        <ul>
+            <li class="menu1"><a href="#">left</a></li>
+            <li class="menu2"><a href="#">right</a></li>
+            <li class="menu3"><a href="#">amin</a></li>
+        </ul>
+    </div>
+</body>
+</html>

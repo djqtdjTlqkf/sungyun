@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        a:link,a:visited{
+            text-decoration: none; color: black;
+        }
+        .clearfix::after{
+            content: ""; display: block; clear: both;
+        }
+        header{
+            border: 2px solid black;
+        }
+        .line{
+            width: 1000px;
+            height: 100px;
+            margin: 25px 25px;
+            border: 2px solid black;
+        }
+        .logo{
+            width: 70px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        .logo:hover{
+            background-color: #111;
+            color: aliceblue;
+            transition: 0.3s;
+        }
+        .line.menu li{
+            width: 20%;
+            height: 30px;
+            float: left;
+            background-color: #777;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .line.menu li:hover{
+            background-color: #ff0;
+            color: aliceblue;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="line">
+            <h1 class="logo"><a href="#">logo</a></h1>
+                <div class="menu">
+                    <ul class="clearfix">
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu4</a></li>
+                    </ul>
+                </div>    
+        </nav>
+        <ul class="clearfix">
+            <li class="aside"><a href="#">aisde</a></li>
+            <li class="content"><a href="#">content</a></li>
+        </ul>
+        <div class="footer"><a href="#">footer</a></div>    
+    </header>
+</body>
+</html>
