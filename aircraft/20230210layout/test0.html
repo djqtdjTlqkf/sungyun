@@ -29,7 +29,7 @@
             position: relative;
         }
         .line .menu1{
-            width: 100px;
+            width: calc( 100% / 4 );
             margin: 0 auto;
             float: left;
             display: flex;
@@ -40,7 +40,8 @@
             border-top: 2px solid black;
             border-bottom: 2px solid black;
             position: absolute;
-            left: 0;
+            z-index: 1;
+            left: -50px;
         }
         .line .menu2{
             width: 100px;
@@ -54,7 +55,8 @@
             border-top: 2px solid black;
             border-bottom: 2px solid black;
             position: absolute;
-            right: 50px;
+            z-index: 2;
+            right: -50px;
         }
         .line .menu:hover{
             background-color: red;
@@ -63,16 +65,18 @@
         }
         .line .menu:first-child{
             border-left: 2px solid black;
+            overflow: hidden;
         }
+        
     </style>
 </head>
 <body>
-    <div class="line clearfix">
+    <nav class="line clearfix">
         <ul>
             <li class="menu1"><a href="#">left</a></li>
             <li class="menu2"><a href="#">right</a></li>
             <li class="menu3"><a href="#">amin</a></li>
         </ul>
-    </div>
+    </nav>
 </body>
 </html>
