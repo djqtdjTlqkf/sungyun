@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a:link, a:visited{
+            text-decoration: none;
+            color: black;
+        }
+        li{list-style: none;}
+        .menu1{
+            width: 300px;
+            height: 100px;
+            background-color: #ff0;
+            position: absolute;
+            left: -50px;
+        }
+        .menu2{
+            width: 100px;
+            height: 100px;
+            background-color: #0ff;
+            position: absolute;
+            left: 10px;
+        }
+        .menu3{
+            width: 100px;
+            height: 100px;
+            background-color: #f0f;
+            position: absolute;
+            right: 0;
+        }
+        /* .menu1:first-child{
+            border-left: 2px solid black;
+        } */
+        .line{
+            width: 1000px;
+            height: 300px;
+            /* position: relative; */
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="line">
+        <ul class="clearfix">
+            <li class="menu1">main1</li>
+            <li class="menu2">main2</li>
+            <li class="menu3">main3</li>
+        </ul>
+    </div>
+</body>
+</html>
