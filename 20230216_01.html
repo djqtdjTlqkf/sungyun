@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .clearfix:after{
+            content:"";display: block;clear: both;
+        }
+        li{list-style: none;}
+
+        h3{font-size: 18px;}
+        body{font-size: 14px;}
+
+
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bg1{background: linear-gradient(300deg, #48C6EF 1.57%, #6F86D6 100%);}
+        .bg2{background: violet;}
+        .bg3{background: #ccc;}
+
+        .mb25{margin-bottom: 25px !important;}
+        /* 임포턴트 붙이는 이유는 다른거에 우선순위가 밀릴까봐 */
+        .py25{padding: 25px 0 !important;}
+        .tac{text-align: center !important;}
+
+        .underline:after{
+            content:"";display: block;width: 50px;height: 1px;background: #000;margin: 10px auto
+        }
+
+
+        /* con1  */
+
+        .con1 li{
+            float: left;
+            width:calc( ( 100% - 80px ) /5 );
+            /* -80은 간격이 20씩 4칸이라서 주는거임 */
+            margin-right: 20px;
+            position: relative;
+            border-radius: 10px;
+            /* 래디어스를 주어서 라운드를 준다 */
+            overflow: hidden;
+            /* 부모의 크기에 맞춰서 자르려고 li에 줬다 */
+        }
+        .con1 li:last-child{margin-right: 0;}
+        .con1 li img{
+            width: 100%;display: block;
+            transform:scale(1);
+            /* 1이 100% 1.1은 110% */
+            transition: 0.3s;
+        }
+        .con1 li:hover img{
+            transform: scale(1.1);
+        }
+        .con1 .tWrap{
+            background-color:rgba(0,0,0,0.3);
+            /* red,greed,blue,alpha(투명도) */
+            color:white;
+            position: absolute;
+            width: 100%;height: 100%;
+            top: 0;left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            /* 0이면 안보이고 1이면 보이고 0과 1사이에서 조절 가능 */
+            transition:0.3s
+        }
+
+        .con1 li:hover .tWrap{opacity: 1;}
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="bg1 py25">
+        <div class="container con1">
+            <h2 class="title tac underline">GALLERY</h2>
+            <p class="detail tac mb25">Lorem ipsum dolor sit amet.</p>
+            <ul class="clearfix">
+                <li class="card">
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="tWrap">
+                        <h3>title</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="tWrap">
+                        <h3>title</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="tWrap">
+                        <h3>title</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="tWrap">
+                        <h3>title</h3>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="tWrap">
+                        <h3>title</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
