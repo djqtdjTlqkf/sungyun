@@ -1,0 +1,73 @@
+@charset "utf-8";
+html,body{height: 100%;}
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a:link,a:visited{text-decoration: none; color:black;}
+.clearfix:after{
+    content: ""; display: block; clear: both;
+}
+.slideWrap .slide li img{
+    width: 100%;
+}
+img{
+    display: block;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+.meunFont{
+    font-size: 20px;
+    font-weight: 700;
+}
+.container{
+    width: 1280px; margin: 0 auto; position: relative;
+}
+
+/* header */
+.hd{
+    padding: 20px 0; background: white;
+    position: fixed; width: 100%; z-index: 9999;
+}
+.hd .navWrap{
+    height: 35px;
+}
+.hd h1{
+    width: 165px; height: 35px;
+    float: left;
+}
+.hd h1 img{width: 100%;}
+.hd .gnb{float: right;}
+.hd .gnb li{float: left; width: 170px;}
+.hd .gnb li a{
+    display: block; line-height: 35px;
+    text-align: center;
+}
+.hd:after{
+    content: "";
+    display: block;
+    border-bottom: 1px solid black;
+}
+/* wrap */
+.slideWrap .sItem{
+    height: 100vh;
+}
+.slideWrap .slide .tWrap{
+    width: 456px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.slideWrap .sItem .txtWrap{
+    height: 100%;
+}
+.slideWrap .sItem .txtWrap h3{
+    font-size: 80px;
+    font-weight: 700;
+    color: white;
+}
+.slideWrap .sItem .txtWrap p{
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}

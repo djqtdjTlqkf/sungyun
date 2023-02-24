@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .clearfix:after{
+            content: ""; display: block;clear: both;
+        }
+        a:link,a:visited{
+            text-decoration: none;
+            color: #222;
+        }
+        .wrap{
+            width: 1000px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;top: 0;
+            background-color: blue;
+        }
+        .box2{
+            width: 500px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;bottom: 0;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1" onmouseover="boxOver('black','pink')" onmouseout="boxOut()"> 마우스오버</div>
+        <div class="box2">색변화<br>
+            마우스오버시 검정색<br>
+            마우스아웃시 바이올렛
+        </div>
+    </div>
+    <script>
+        const boxElem = document.getElementsByClassName("box1")[0];
+        const boxElem2 = document.getElementsByClassName("box2")[0];
+        
+        function boxOver(color,fcolor){
+            boxElem2.style.background = color;
+            boxElem2.style.color = fcolor;
+        }
+        function boxOut(){
+            boxElem2.style.background = "violet"
+            boxElem2.style.color = "black"
+        }
+        // boxElem.onmouseover = function(){
+        //     boxElem2.style.background = "black"
+        // }
+        // boxElem.onmouseout = function(){
+        //     boxElem2.style.background = "violet"            
+        // }
+    </script>
+</body>
+</html>
