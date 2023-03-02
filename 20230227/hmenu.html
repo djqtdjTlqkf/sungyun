@@ -17,7 +17,11 @@
             width: 50px;
             height: 50px;
             border: 1px solid #000;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
         }
         .line{
             width: 30px;
@@ -25,14 +29,45 @@
             background-color: #000;
             border-radius: 2px;
             position: absolute;
+            transition: 0.3s;
+        }
+        .line.line1{
+            transform: translateY(-10px);
+        }
+        .line.line2{
+            opacity: 1;
+        }
+        .line.line3{
+            transform: translateY(10px);
+        }
+
+        .btnWrap.click .line.line1{
+            transform: translateY(0px) rotate(45deg);
+        }
+        .btnWrap.click .line.line2{opacity: 0;}
+        .btnWrap.click .line.line3{
+            transform: translateY(0px) rotate(-45deg);
         }
     </style>
 </head>
 <body>
-    <div class="btnWrap">
+    <div class="btnWrap" onclick="mclick()">
         <div class="line line1"></div>
         <div class="line line2"></div>
         <div class="line line3"></div>
     </div>
+    <script>
+        //1. html,body 및 body의 값 또는 line값에 맞는 width 값이나 height 값들을 정해서 넣어준다.
+        //2. position을 어떻게 넣을지 작성 후 flex를 어디에 넣을지 작성한다.
+        //3. line1 ,line2, line3을 작성하여 클릭시 줄이 세개가 나올지 엑스값이 나올지를 생각해서 작성한다.
+        //   3번에서 transform 으로 y값과 rotate로 각도를 줘서 변화시킨다.
+        //4. 선택자(document.querySelector("클래스 이름")를 줘서 click event 작성
+        //5. 함수로 토글이나 애드로 클릭시 어떻게 할지 정한다.
+
+        const mWrapElem = document.querySelector(".btnWrap")
+        function mclick(){
+            mWrapElem.classList.toggle("click")
+        }
+    </script>
 </body>
 </html>
