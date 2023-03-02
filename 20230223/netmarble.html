@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../index/css/jquery.bxslider.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../index/js/jquery.bxslider.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 <body>
     <header class="hd">
@@ -114,5 +115,82 @@
             pager: false
         })
     </script>
+    <div class="title">
+        <h5 class="container">재단소개</h5>
+    </div>
+    <div class="sWrap">   
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1
+                    <div class="itemWrap">
+                        <div class="imgWrap" style="background-image:url(/text.html/img/images/pc01.jpg)"></div>
+                        <div>
+                            <h3>Lorem, ipsum dolor.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, numquam?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 1
+                    <div class="itemWrap">
+                        <div class="imgWrap" style="background-image:url(/text.html/img/images/pc01.jpg)"></div>
+                        <div>
+                            <h3>Lorem, ipsum dolor.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, numquam?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 1
+                    <div class="itemWrap">
+                        <div class="imgWrap" style="background-image:url(/text.html/img/images/pc01.jpg)"></div>
+                        <div>
+                            <h3>Lorem, ipsum dolor.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, numquam?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 1
+                    <div class="itemWrap">
+                        <div class="imgWrap" style="background-image:url(/text.html/img/images/pc01.jpg)"></div>
+                        <div>
+                            <h3>Lorem, ipsum dolor.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, numquam?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 1
+                    <div class="itemWrap">
+                        <div class="imgWrap" style="background-image:url(/text.html/img/images/pc01.jpg)"></div>
+                        <div>
+                            <h3>Lorem, ipsum dolor.
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, numquam?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+      <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+      <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        // },
+        });
+    </script>
+
 </body>
 </html>
