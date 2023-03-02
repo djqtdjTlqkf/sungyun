@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a:link,a:visited{
+            text-decoration: none; color: #333;
+        }
+        .wrap{
+            width: 1000px; margin: 0 auto;
+        }
+        .wrap li{
+            float: left;
+            width: calc(( 100% -50px) / 3);
+            margin-right: 25px;
+        }
+        .wrap li:last-child{margin-right: 0;}
+        .imgWrap{
+
+        }
+        .wrap .txtWrap{padding: 10px 20px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <img src="/text.html/img/images/img1.jpg" alt="" class="img1">
+                <div class="txtWrap">
+                    <h3>Lorem ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+            </li>
+            <li>
+                <img src="/text.html/img/images/img1.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>Lorem ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+            </li>
+            <li>
+                <img src="/text.html/img/images/img1.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>Lorem ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
