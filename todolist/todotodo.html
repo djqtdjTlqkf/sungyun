@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    html,body{height: 100%;}
+    *{margin: 0;padding: 0;box-sizing: border-box;}
+    li{list-style: none;}
+    a:link,a:visited{
+        text-decoration: none;
+        color: #333;
+    }
+    .clearfix:after{
+        content: "";display: block;clear: both;
+    }
+    .inpWrap,.listView{
+            width: 400px;
+            margin: 0 auto;
+    }
+    .inpWrap{background-color: pink;margin-bottom: 10px;}
+    .btnAllDel{display: none;}
+    .listView ul li{
+        display: flex;
+        justify-content: space-between;
+    }
+    .listView .view{
+        height: 100px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: violet;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1">입력</button>
+    </div>
+    <div class="listView">
+        <ul></ul>
+        <div class="view">오늘의 할일을 입력하세요</div>
+        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+    </div>
+    <script>
+        const inpElem = document.querySelector(".inp");
+        const btn1Elem = document.querySelector(".btn1");
+        const listElem = document.querySelector(".listView ul");
+        const listNoneElem = document.querySelector(".listView .view");
+        const btnAllElem = document.querySelector(".btnAllDel");
+
+        let listData = [];
+
+        btn1Elem.addEventListener("click",function(){
+            
+            if(inpElem.value != ""){
+                listData.push(inpElem.value);
+                inpElem.value = ""
+                viewData();
+            }else{
+                alert("오늘의 할일을 입력하세요")
+                inpElem.focus()
+            }
+        })
+        function viewData(){
+            let viewList = "";
+
+            listData.forEach(function(item,index){
+                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
+            })
+
+            if(listData.length>0){
+                btnAllElem.style.display = "block";
+                listNoneElem.style.display = "none";
+            }else{
+                btnAllElem.style.display = "none";
+                listNoneElem.style.display= "flex";
+            }
+
+            listElem.innerHTML = viewList;
+        };
+        viewData();
+
+        function allDel(){
+            listData = [];
+            viewData();
+        }
+        function itemDel(index){
+            listData.splice(index,1);
+            viewData();
+        }
+
+    </script>
+</body>
+</html>
