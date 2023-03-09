@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>TODO List Example</title>
+    <style>
+        * {
+            box-sizing: content-box;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            font-size: 20px;
+        }
+
+
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at top, #ffde7d, transparent),
+                radial-gradient(ellipse at bottom, #ccf6c8, transparent);
+            width: 500px;
+            height: 700px;
+            margin: 50px auto;
+            border-radius: 30px;
+        }
+
+        .main .title {
+            margin: 0;
+        }
+
+        .main .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 400px;
+            height: 600px;
+            background-color: #f9f9f9;
+            border-radius: 30px;
+        }
+
+        .main .items {
+            padding: 0;
+            flex-basis: 80%;
+        }
+
+        .item--add,
+        .item--delete {
+            cursor: pointer;
+        }
+
+        .main .item--add {
+            margin-right: 5px;
+        }
+
+        .item--add--icon {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .item--check {
+            transform: scale(1.5);
+            margin-right: 5px;
+        }
+
+        .item {
+            margin: 20px 0;
+        }
+
+        .item--title {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="container">
+            <h1 class="title">TODOLIST</h1>
+            <ul class="items">
+            </ul>
+            <div class="item--add--icon">입력
+                <i class="fas fa-plus-circle before"></i>
+                <button class="btn_modi">수정</button>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        const items = document.querySelector('.items');
+        const itemPlus = document.querySelector('.item--add--icon');
+        itemPlus.addEventListener('click', e => {
+            let thisElement = e.target;
+            if (thisElement.nodeName !== 'I') {
+                thisElement = e.target.firstElementChild;
+            }
+            if (thisElement.classList.contains('fa-plus-circle')) {
+                const itemElement = document.createElement('li');
+                itemElement.classList.add('item');
+                const checkTag = document.createElement('input');
+                checkTag.setAttribute('type', 'checkbox');
+                checkTag.classList.add('item--check');
+                const textTag = document.createElement('input');
+                textTag.setAttribute('type', 'text');
+                textTag.classList.add('item--title');
+                const spanTag = document.createElement('span');
+                spanTag.classList.add('item--delete');
+                spanTag.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+
+                itemElement.append(checkTag, textTag, spanTag);
+                items.append(itemElement);
+                thisElement.classList.remove('fa-plus-circle');
+                thisElement.classList.add('fa-check');
+
+                textTag.focus();
+            } else if (thisElement.classList.contains('fa-check')) {
+                const itemTitles = document.querySelectorAll('.item--title');
+                const itemTitle = itemTitles[itemTitles.length - 1];
+                if (itemTitle.value === null || itemTitle.value === '') {
+                    const items = document.querySelectorAll('.item');
+                    items[items.length - 1].remove();
+                }
+                itemTitle.setAttribute('disabled', true);
+                itemTitle.style.border = 'none';
+                itemTitle.style.backgroundColor = 'transparent';
+                thisElement.classList.remove('fa-check');
+                thisElement.classList.add('fa-plus-circle');
+            }
+        });
+        const deleteBtns = document.querySelectorAll('.fa-trash-alt');
+        items.addEventListener('click', e => {
+            if (e.target.classList.contains('fa-trash-alt')) {
+                const checkboxs = document.querySelectorAll('.item--check:checked');
+                if (checkboxs.length > 0)
+                    checkboxs.forEach(item => item.parentElement.remove());
+                else
+                    e.target.parentElement.parentElement.remove();
+            }
+        });
+        window.addEventListener('keydown', e => {
+            if (e.keyCode !== 13) {
+                e.stopPropagation();
+                return;
+            }
+            itemPlus.click();
+        })
+
+        const btnMoElem = document.querySelector(".btn_modi");
+
+        btnMoElem.addEventListener("click", function () {
+            listData[numElem.value].todo = inpElem.value;
+            listData[numElem.value].done = false;
+            inpElem.value = ""
+            btnIpElem.style.display = "inline-block";
+            btnMoElem.style.display = "none";
+
+            // localStorage get
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData", valueData)
+
+            viewData()
+        })
+    </script>
+</body>
+
+</html>

@@ -17,43 +17,6 @@
             height: 100%;
         }
 
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-repeat: no-repeat;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        html,
-        body {
-            height: 100%;
-            position: relative;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -86,21 +49,34 @@
         }
 
         .inpWrap {
-            background: skyblue;
-            position: absolute;
-            z-index: 999;
-            left: 750px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at top, #ffde7d, transparent),
+                radial-gradient(ellipse at bottom, #ccf6c8, transparent);
+            width: 500px;
+            height: 700px;
+            margin: 50px auto;
+            border-radius: 30px;
 
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 400px;
+            height: 600px;
+            background-color: #f9f9f9;
+            border-radius: 30px;
         }
 
         .listView {
-            background: pink;
             position: absolute;
-            z-index: 9999;
-            left: 750px;
-            top: 20px;
-            background-size: cover;
-            background-repeat: no-repeat;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: white;
         }
 
         .listView ul li {
@@ -136,12 +112,14 @@
 
 <body>
     <div class="inpWrap">
-        <input type="hidden" class="num">
-        <input type="text" class="inp">
-        <button class="btn_input">입력</button>
-        <button class="btn_modi">수정</button>
-    </div>
-    <div class="listView" style="background-image:url(mapleimage/todolist.png);">
+        <div class="container">
+            <input type="hidden" class="num">
+            <input type="text" class="inp">
+            <button class="btn_input">입력</button>
+            <button class="btn_modi">수정</button>
+        </div>
+    </div>    
+    <div class="listView">
         <ul></ul>
         <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
     </div>
@@ -244,23 +222,5 @@
 
     </script>
 
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(mapleimage/maple01.jpeg);"></div>
-            <div class="swiper-slide" style="background-image: url(mapleimage/maple02.jpeg);"></div>
-            <div class="swiper-slide" style="background-image: url(mapleimage/maple03.jpeg);"></div>
-            <div class="swiper-slide" style="background-image: url(mapleimage/maple04.jpeg);"></div>
-        </div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {});
-    </script>
 </body>
-
 </html>
