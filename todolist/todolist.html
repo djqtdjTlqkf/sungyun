@@ -58,7 +58,7 @@
         <input type="hidden" class="num">
         <input type="text" class="inp">
         <button class="btn_input">입력</button>
-        <button class="btn-modi">수정</button>
+        <button class="btn_modi">수정</button>
     </div>
     <div class="listView">
         <ul></ul>
@@ -76,7 +76,7 @@
 
             let value = {todo:inpElem.value,done:false}
 
-            if(inpElem.Value != ""){
+            if(inpElem.value != ""){
                 listData.push(value);
 
                 let valueData = JSON.stringify(listData)
@@ -103,7 +103,7 @@
             viewData()
         })
 
-        function vuewData(){
+        function viewData(){
             if(localStorage.length>0){
                 let localData = localStorage.getItem("todoData");
                 listData = JSON.parse(localData)
@@ -119,7 +119,7 @@
                     viewList += `<li class="item">${item.todo}`
                 }
                 viewList += `<div class="icon">
-                    <a href="javascript:void(0)" onclick="itemDel(${index})<i class="fa-solid fa-trash-can"></i></a>
+                    <a href="javascript:void(0)" onclick="itemDel(${index}) <i class="fa-solid fa-trash-can"></i></a>
                     <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
                     <a href="javascript:void(0)" onclick="done(${index})" class="han"><i class="fa-solid fa-square-check"></i></a>
                     </div></li>`
