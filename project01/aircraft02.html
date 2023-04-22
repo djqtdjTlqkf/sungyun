@@ -13,19 +13,56 @@
         .clearfix:after{
         content: ""; display: block; clear: both;
         }
-
         header{
+            width: 100%;
+            height: 100vh;
             position: relative;
         }
         .main{
             position: absolute;
-            top: 70%;
-            left: 45%;
+            top: 40%;
+            left: 50%;
+            display: inline;
+            transform: translate(-50%);
+        }
+        div{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            display: inline;
+            transform: translate(-50%);
         }
     </style>
 </head>
 <body>
     <header>
+        <div>
+            <h1 id="clock" style="color:black;">clock</h1>
+    
+            <script>
+                var Target = document.getElementById("clock");
+                function clock() {
+                    var time = new Date();
+
+                    var month = time.getMonth();
+                    var date = time.getDate();
+                    var day = time.getDay();
+                    var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+                    var hours = time.getHours();
+                    var minutes = time.getMinutes();
+                    var seconds = time.getSeconds();
+
+                    Target.innerText = 
+                    `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+                    `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+                
+                }
+                clock();
+                setInterval(clock, 1000); // 1초마다 실행
+            </script>
+        </div>
+
         <form class="main">
             <h1>항공기 예약 시스템</h1>
             <label for="name">이름:</label>
