@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .btn_modi {
+            display: none;
+        }
+
+        .inpWrap,
+        .listView {
+            width: 300px;
+        }
+
+        .inpWrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at top, #ffde7d, transparent),
+                radial-gradient(ellipse at bottom, #ccf6c8, transparent);
+            width: 500px;
+            height: 700px;
+            margin: 50px auto;
+            border-radius: 30px;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 400px;
+            height: 600px;
+            background-color: #f9f9f9;
+            border-radius: 30px;
+        }
+
+        .listView {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: white;
+        }
+
+        .listView ul li {
+            display: flex;
+            padding: 5px 0;
+        }
+
+        .listView ul li .list {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .listView ul li .icon {
+            margin-left: auto;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .listView ul li .icon a {
+            color: white
+        }
+
+        .item.done {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inpWrap">
+        <div class="container">
+            <input type="hidden" class="num">
+            <input type="text" class="inp">
+            <button class="btn_input">입력</button>
+            <button class="btn_modi">수정</button>
+        </div>
+    </div>    
+    <div class="listView">
+        <ul></ul>
+        <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
+    </div>
+    <script>
+        let listData = []
+        const inpElem = document.querySelector(".inp");
+        const btnIpElem = document.querySelector(".btn_input");
+        const numElem = document.querySelector(".num");
+        const btnMoElem = document.querySelector(".btn_modi");
+        const listElem = document.querySelector(".listView ul")
+
+        btnIpElem.addEventListener("click", function () {
+
+            let value = { todo: inpElem.value, done: false }
+
+            if (inpElem.value != "") {
+                listData.push(value);
+
+                let valueData = JSON.stringify(listData)
+                localStorage.setItem("todoData", valueData)
+
+                viewData();
+                inpElem.value = ""
+            } else {
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }
+        })
+
+        btnMoElem.addEventListener("click", function () {
+            listData[numElem.value].todo = inpElem.value;
+            listData[numElem.value].done = false;
+            inpElem.value = ""
+            btnIpElem.style.display = "inline-block";
+            btnMoElem.style.display = "none";
+
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData", valueData)
+
+            viewData()
+        })
+
+        function viewData() {
+            if (localStorage.length > 0) {
+                let localData = localStorage.getItem("todoData");
+                listData = JSON.parse(localData)
+            }
+
+            let viewList = "";
+            listData.forEach(function (item, index) {
+                if (item.done == true) {
+                    viewList += `<li class="item done">${listData[index].todo}`
+                } else {
+                    viewList += `<li class="item">${item.todo}`
+                }
+
+                viewList += `<div class="icon">
+                            <a href="javascript:void(0)" onclick="itemDel(${index})"<i class="fa-solid fa-trash-can"></i></a>
+                            <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                            <a href="javascript:void(0)" onclick="done(${index})" class="han"><i class="fa-solid fa-square-check"></i></a>
+                            </div></li>`
+            })
+
+            listElem.innerHTML = viewList;
+        }
+        viewData();
+
+        function itemDel(index) {
+            listData.splice(index, 1)
+
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData", valueData)
+
+            viewData()
+        }
+
+        function done(index) {
+            listData[index].done = !listData[index].done;
+
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData", valueData)
+
+            viewData()
+        }
+        function modi(todo, index) {
+            inpElem.value = todo;
+            numElem.value = index;
+            btnIpElem.style.display = "none";
+            btnMoElem.style.display = "inline-block";
+        }
+
+        function listAllDel() {
+            listData = [];
+
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData", valueData)
+            viewData()
+        }
+
+
+    </script>
+
+</body>
+</html>
