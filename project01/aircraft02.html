@@ -5,7 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+    <style>        
+        html,body{height: 100%;}
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        a:link,a:visited{text-decoration: none; color:black;}
+        .clearfix:after{
+        content: ""; display: block; clear: both;
+        }
+        .body01{
+            opacity: 0.7;
+			background-image: url('/project01/aircraftficture/다운로드\ \(6\).jpeg'); /* 배경 이미지 지정 */
+			background-size: cover; /* 이미지를 화면에 맞게 늘리거나 줄이기 */
+			background-position: center center; /* 배경 이미지 위치 중앙 정렬 */
+			background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+		}
+        		/* 스타일링 */
+		nav {
+			background-color: #f9f5f5; /* 배경색 지정 */
+			color: #fff; /* 글자색 지정 */
+			height: 50px; /* 높이 지정 */
+			line-height: 50px; /* 높이와 동일하게 지정 */
+		}
+		nav ul {
+            text-align: center;
+			margin: 0; /* 외부여백 초기화 */
+			padding: 0; /* 내부여백 초기화 */
+			list-style: none; /* 리스트 스타일 제거 */
+			display: flex; /* 가로배치 설정 */
+		}
+		nav li {
+            width: 300px;
+			margin: 0 10px; /* 아이템 간격 지정 */
+		}
+		nav a {
+			color: #fff; /* 링크 색상 지정 */
+			text-decoration: none; /* 밑줄 제거 */
+			padding: 0 10px; /* 링크내부 여백 지정 */
+			display: block; /* 블록요소로 변경하여 전체영역 클릭 가능하도록 설정 */
+			height: 100%; /* 부모(nav) 높이와 동일하게 설정 */
+		}
+        nav::after{
+            content: "";
+			display: block;
+			height: 3px;
+			background-color: #090808;
+			margin: 0 auto;
+			width: 90%;
+			max-width: 2100px;
+			position: relative;
+        }
+
         html,body{height: 100%;}
         *{margin: 0;padding: 0;box-sizing: border-box;}
         li{list-style: none;}
@@ -25,7 +75,7 @@
             display: inline;
             transform: translate(-50%);
         }
-        div{
+        .clock{
             position: absolute;
             top: 30%;
             left: 50%;
@@ -35,58 +85,79 @@
     </style>
 </head>
 <body>
-    <header>
-        <div>
-            <h1 id="clock" style="color:black;">clock</h1>
+    <div class="body01">
+        <nav>
+		    <ul>
+			    <li><a href="#">메뉴1</a></li>
+			    <li><a href="#">메뉴2</a></li>
+			    <li><a href="#">메뉴3</a></li>
+			    <li><a href="#">메뉴4</a></li>
+			    <li><a href="#">메뉴5</a></li>
+		    </ul>
+	    </nav>
+
+        <header>
+            <div class="clock">
+                <h1 id="clock" style="color:black;">clock</h1>
     
-            <script>
-                var Target = document.getElementById("clock");
-                function clock() {
-                    var time = new Date();
+                <script>
+                    function checkCity() {
+			            var city = document.getElementById("city").value;
+			            if (city.toLowerCase() === "부산") {
+				            window.open("https://www.busan.go.kr/");
+			            } else {
+				            alert("입력하신 도시는 " + city + "입니다.");
+			            }
+		            }
 
-                    var month = time.getMonth();
-                    var date = time.getDate();
-                    var day = time.getDay();
-                    var week = ['일', '월', '화', '수', '목', '금', '토'];
+                    var Target = document.getElementById("clock");
+                    function clock() {
+                        var time = new Date();
 
-                    var hours = time.getHours();
-                    var minutes = time.getMinutes();
-                    var seconds = time.getSeconds();
+                        var month = time.getMonth();
+                        var date = time.getDate();
+                        var day = time.getDay();
+                        var week = ['일', '월', '화', '수', '목', '금', '토'];
 
-                    Target.innerText = 
-                    `${month + 1}월 ${date}일 ${week[day]}요일 ` +
-                    `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+                        var hours = time.getHours();
+                        var minutes = time.getMinutes();
+                        var seconds = time.getSeconds();
+
+                        Target.innerText = 
+                        `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+                        `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
                 
-                }
-                clock();
-                setInterval(clock, 1000); // 1초마다 실행
-            </script>
-        </div>
+                    }
+                    clock();
+                    setInterval(clock, 1000); // 1초마다 실행
+                </script>
+            </div>
 
-        <form class="main">
-            <h1>항공기 예약 시스템</h1>
-            <label for="name">이름:</label>
-            <input type="text" id="name" name="name" required><br>
+            <form class="main">
+                <h1>항공기 예약 시스템</h1>
+                <label for="city">이름:</label>
+                <input type="text" id="city" name="city" required><br>
 
-            <label for="flight-number">항공편 번호:</label>
-            <input type="text" id="flight-number" name="flight-number" required><br>
+                <label for="flight-number">항공편 번호:</label>
+                <input type="text" id="flight-number" name="flight-number" required><br>
 
-            <label for="date">날짜:</label>
-            <input type="date" id="date" name="date" required><br>
+                <label for="date">날짜:</label>
+                <input type="date" id="date" name="date" required><br>
 
-            <label for="class">좌석 등급:</label>
-            <select id="class" name="class" required>
-            <option value="">-- 선택 --</option>
-            <option value="economy">이코노미</option>
-            <option value="business">비즈니스</option>
-            <option value="first">퍼스트</option>
-            </select><br>
+                <label for="class">좌석 등급:</label>
+                <select id="class" name="class" required>
+                <option value="">-- 선택 --</option>
+                <option value="economy">이코노미</option>
+                <option value="business">비즈니스</option>
+                <option value="first">퍼스트</option>
+                </select><br>
 
-            <label for="seats">좌석 수:</label>
-            <input type="number" id="seats" name="seats" min="1" max="10" required><br>
+                <label for="seats">좌석 수:</label>
+                <input type="number" id="seats" name="seats" min="1" max="10" required><br>
 
-            <input type="submit" value="예약하기">
-        </form>
-    </header>
+                <input type="submit" value="예약하기" onclick="checkCity()">
+            </form>
+        </header>
+    </div>    
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        img{
+            width: 100px;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            position: relative;
+            height: 100vh;
+        }
+
+        .airplane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            animation: airplane 4s linear infinite;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+        }
+
+        .overlay.active {
+            opacity: 1;
+        }
+
+        @keyframes airplane {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/project01/aircraftficture/다운로드 (7).jpeg" alt="airplane" class="airplane">
+        <div class="overlay">
+          <h1>Welcome to my website!</h1>
+          <p>Click anywhere to continue.</p>
+        </div>
+    </div>
+
+    <script>
+        const overlay = document.querySelector('.overlay');
+        const container = document.querySelector('.container');
+
+        container.addEventListener('click', () => {
+        overlay.classList.add('active');
+  
+        // 2초 후에 다른 페이지로 이동
+        setTimeout(() => {
+            window.location.href = "aircraftproject.html"; // 이동하고자 하는 페이지의 URL
+        }, 2000); // 2초
+        });
+    </script>
+</body>
+</html>
