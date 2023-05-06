@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        .imaslid2 {
+            border: 1px solid black;
+            width: 1300px;
+            height: 400px;
+            margin-bottom: 70px;
+            overflow: hidden; /* 이미지가 보이는 영역의 너비를 벗어나는 이미지는 숨기도록 함 */
+        }
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            position: absolute; /* 이미지가 겹쳐서 보이도록 함 */
+            top: 0;
+            left: 0;
+            display: none; /* 이미지를 화면에서 숨김 */
+        }
+    </style>
+</head>
+<body>
+    <div class="imaslid1">
+        <div class="imaslid2">
+          <img class="slide-image" src="/project01/aircraftficture/slid1.png" alt="">
+          <img class="slide-image" src="/project01/aircraftficture/slid2.png" alt="">
+          <img class="slide-image" src="/project01/aircraftficture/slid3.png" alt="">
+          <img class="slide-image" src="/project01/aircraftficture/slid4.png" alt="">
+          <img class="slide-image" src="/project01/aircraftficture/slid5.png" alt="">
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        var currentIndex = 0; // 현재 보여지고 있는 이미지의 인덱스
+        var images = $('.slide-image'); // 이미지들을 선택
+        var imageCount = images.length; // 이미지의 개수
+        images.eq(currentIndex).fadeIn(); // 첫 번째 이미지 보이기
+
+        setInterval(function() {
+        images.eq(currentIndex).fadeOut(); // 현재 이미지 사라지게 하기
+        currentIndex = (currentIndex + 1) % imageCount; // 다음 이미지의 인덱스 계산
+        images.eq(currentIndex).fadeIn(); // 다음 이미지 보이기
+        }, 3000);
+    });
+    </script>
+
+</body>
