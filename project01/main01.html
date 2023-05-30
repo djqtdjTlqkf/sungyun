@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+.a{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+ .b{
+    border: 1px solid black;
+    width: 1300px;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+ }
+
+ .c{
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    font-size: 30px;
+ }
+
+ .d{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 25px;
+    margin-right: 50px;
+    width: 130px;
+    height: 30px;
+    justify-content: space-between;
+ }
+
+.menu1{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.menu2{
+    border: 1px solid black;
+    width: 1300px;
+    height: 40px;
+    position: relative;
+   
+}
+.menu3{
+    border: 1px solid black;
+    position: absolute;
+    right:50px;
+    width: 516px;
+    height: 40px;
+
+}
+.menu4{
+    border: 1px solid black;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slid1{
+    position: relative;
+    background-color: beige;
+    border: 1px solid black;
+    width: 100%;
+    height: 816px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slid2{
+    position: absolute;
+    top: 200px;
+    border: 1px solid black;
+    width: 1300px;
+    height: 400px;
+    z-index: 999;
+}
+.slid3{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+    align-items: center;
+}
+.imaslid2 {
+    width: 100vw;
+    height: 100vh ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    overflow: hidden; /* 이미지가 보이는 영역의 너비를 벗어나는 이미지는 숨기도록 함 */
+}
+.slide-image {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* 이미지가 겹쳐서 보이도록 함 */
+    display: none; /* 이미지를 화면에서 숨김 */
+    object-fit: cover;
+}
+</style>
+<body>
+<div class="a">    
+    <div class="b">
+        <div class="c"><a href="#"><img src="/project01/aircraftficture/첫페이지로고.png" alt=""></a></div>
+        <div class="d">
+            <div><a href="#">로그인</a></div>
+            <div><a href="#">회원가입</a></div>
+        </div>
+    </div>
+</div>
+<div class="menu1">
+    <div class="menu2">
+        <div class="menu3">
+            <div class="menu4">
+                <div><a href="#">메뉴1</a></div>
+                <div><a href="#">메뉴2</a></div>
+                <div><a href="#">메뉴3</a></div>
+                <div><a href="#">메뉴4</a></div>
+                <div><a href="#">메뉴5</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="slid1">
+    <div class="imaslid1">
+        <div class="imaslid2">
+            <img class="slide-image" src="/project01/aircraftficture/slid1.png" alt="">
+            <img class="slide-image" src="/project01/aircraftficture/slid2.png" alt="">
+            <img class="slide-image" src="/project01/aircraftficture/slid3.png" alt="">
+            <img class="slide-image" src="/project01/aircraftficture/slid4.png" alt="">
+            <img class="slide-image" src="/project01/aircraftficture/slid5.png" alt="">
+            <div class="slid2">
+                <div class="slid3">
+                    <h3>슬라이드service</h3>
+                    <h5>내용</h5>
+                    <a href="#">service 클릭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        var currentIndex = 0; // 현재 보여지고 있는 이미지의 인덱스
+        var images = $('.slide-image'); // 이미지들을 선택
+        var imageCount = images.length; // 이미지의 개수
+        images.eq(currentIndex).fadeIn(); // 첫 번째 이미지 보이기
+
+        setInterval(function() {
+        images.eq(currentIndex).fadeOut(); // 현재 이미지 사라지게 하기
+        currentIndex = (currentIndex + 1) % imageCount; // 다음 이미지의 인덱스 계산
+        images.eq(currentIndex).fadeIn(); // 다음 이미지 보이기
+        }, 3000);
+    });
+</script>
+</body>
+</html>
