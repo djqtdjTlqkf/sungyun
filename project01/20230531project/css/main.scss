@@ -1,0 +1,99 @@
+html, body {
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: solid black 1px;    
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a:link, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .container {
+    width: 1280px;
+    margin: 0;
+    
+  }
+  //header//
+  .hd {
+    height: 150px;
+    background-color:skyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .logo{margin-left: 50px;
+    a{display: block;
+
+    }}
+    .hdWrap{display: block;
+        margin-right: 50px;
+    
+    }
+
+    .topmenu { padding-bottom: 20px;
+       display: flex;
+       justify-content: end;
+       
+   
+    li{display:inline-block;
+        
+        margin-left: 30px;
+        text-align: center;
+       a{display: block;
+        background-color: tomato;
+        width: 80PX;
+        height: 25px;
+       }
+    }}
+    .menu{ 
+        li{display:inline-block;
+        
+        margin-left: 30px;
+        text-align: center;
+        a{display: block;
+            background-color: tomato;
+            width: 100px;
+            height: 40px;
+            
+        
+           }
+        }
+  }}
+  
+  // 본문//
+  .main{
+    background-color: skyblue;
+    display: flex;
+    height: 700px;
+    
+    
+    
+    
+  }
+  //
+  footer {
+    background-color: tomato;
+    display: block;
+    height: 300px;
+  }/*# sourceMappingURL=main.css.map */
