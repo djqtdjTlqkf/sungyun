@@ -1,0 +1,87 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: solid black 1px;
+}
+
+li {
+  list-style: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.hd {
+  height: 150px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.hd .logo {
+  margin-left: 50px;
+}
+.hd .logo a {
+  display: block;
+}
+.hd .hdWrap {
+  display: block;
+  margin-right: 50px;
+}
+.hd .topmenu {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: end;
+}
+.hd .topmenu li {
+  display: inline-block;
+  margin-left: 30px;
+  text-align: center;
+}
+.hd .topmenu li a {
+  display: block;
+  background-color: tomato;
+  width: 80PX;
+  height: 25px;
+}
+.hd .menu li {
+  display: inline-block;
+  margin-left: 30px;
+  text-align: center;
+}
+.hd .menu li a {
+  display: block;
+  background-color: tomato;
+  width: 100px;
+  height: 40px;
+}
+
+.main {
+  background-color: skyblue;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
+  align-items: center;
+  height: 2000px;
+}
+
+footer {
+  background-color: tomato;
+  display: block;
+  height: 300px;
+} /*# sourceMappingURL=main.css.map */
