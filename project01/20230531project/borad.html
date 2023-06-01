@@ -5,50 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>board_write page</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/main.css"> <!-- -->
+    <link rel="stylesheet" href="css/board.css"><!-- -->
 </head>
 <body>
     <!-- header 고정 -->
-    <header class ="hd container">
-        <h1 class = "logo"><a href="#">logo</a></h1>
-      <div class = "hdWrap">
-        <div class ="topmenu">
+    <header class ="hd container"> <!-- -->
+        <h1 class = "logo"><a href="#">logo</a></h1> <!-- -->
+      <div class = "hdWrap"> <!-- -->
+        <div class ="topmenu"> <!-- -->
             <ul>
-                <li><a href="#">login</a></li>
-                <li><a href="#">sign-up</a></li>
+                <div class="login"> <!-- -->
+                    <input type="text" id="username" placeholder="아이디"> <!-- -->
+                    <input type="password" id="password" placeholder="비밀번호"> <!-- -->
+                    <button onclick="login()">로그인</button> <!-- -->
+                </div>
+                <li><a href="#">sign-up</a></li> <!-- -->
             </ul>
         </div>
-        <nav class = "menu">
+        <nav class = "menu"> <!-- -->
             <ul>
-                <li><a href="#">menu1</a></li>
-                <li><a href="#">menu2</a></li>
-                <li><a href="#">menu3</a></li>
-                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu1</a></li> <!-- -->
+                <li><a href="#">menu2</a></li> <!-- -->
+                <li><a href="#">menu3</a></li> <!-- -->
+                <li><a href="#">menu4</a></li> <!-- -->
             </ul>
         </nav>
     </div>
     </header>
      <!-- header 고정 -->
-    <section class = "main container">
+    <section class = "main container"> <!-- -->
        
-    <div class="askedQuestion">
+    <div class="askedQuestion"> <!-- -->
 <!-- FAQ 게시글 -->
         </div>
-            <div class="boardWrap">
-                <div class="subTitle1">
-                    <input type="text" placeholder="제목" style="width: 150px;">
+            <div class="boardWrap"> <!-- -->
+                <div class="subTitle1"> <!-- -->
+                    <input type="text" placeholder="제목" style="width: 150px;"> <!-- -->
                 </div>
-                <div class="subTitle2">
-                    <input type="text" placeholder="질문분류" style="width: 500px;">
+                <div class="subTitle2"> <!-- -->
+                    <input type="text" placeholder="질문분류" style="width: 500px;"> <!-- -->
                 </div>
-                <div class="subTitle3">
-                    <input type="text" placeholder="게시글작성" style="width: 500px; height: 150px;">
+                <div class="subTitle3"> <!-- -->
+                    <input type="text" placeholder="게시글작성" style="width: 500px; height: 150px;"> <!-- -->
                 </div>
-                <button type="submit" class="commit" onclick="myFunction()">제출</button>
+                <button type="submit" class="commit" onclick="myFunction()">제출</button> <!-- -->
             </div>
         </div>
     </div>
     </section>
+    <script>
+        function login() { //
+          var username = document.getElementById("username").value; //
+          var password = document.getElementById("password").value; //
+    
+          // 예시로 간단한 로그인 검증
+          if (username === "admin" && password === "password") { //
+            alert("로그인 성공!"); //
+          } else { //
+            alert("아 이디 또는 비밀번호가 잘못되었습니다."); //
+          }
+        }
+    </script>
 </body>
 </html>

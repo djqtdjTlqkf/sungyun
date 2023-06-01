@@ -1,29 +1,48 @@
-.main{
-    height: 500px;
-    position: relative;
+.main{ /**/
+    height: 500px; /**/
+    position: relative; /**/
 }
 
-.askedQuestion{
-    width: 900px;
-    height: 250px;
-    background-color: blue;
-    position: absolute;
-    top: 3%;
-    left: 15%;
-    border: solid black 1px;
+.askedQuestion{ /**/
+    width: 900px; /**/
+    height: 250px; /**/
+    background-color: blue; /**/
+    position: absolute; /**/
+    top: 3%; /**/
+    left: 15%; /**/
+    border: solid black 1px; /**/
 }
 
-.boardWrap{
-    width: 900px;
-    height: 250px;
-    background-color: yellow;
-    position: absolute;
-    top: 50%;
-    left: 15%;
-    border: solid black 1px;
+.boardWrap{ /**/
+    width: 900px; /**/
+    height: 250px; /**/
+    background-color: yellow; /**/
+    position: absolute; /**/
+    top: 50%; /**/
+    left: 15%; /**/
+    border: solid black 1px; /**/
 }
 
-.commit{
-    position: absolute;
-    left: 800px;
+.commit{ /**/
+    position: absolute; /**/
+    left: 800px; /**/
 }
+
+ .login{ /**/
+    width: 170px; /**/
+    position: absolute; /**/
+    left: 1000px; /**/
+    border: 1px solid #ccc; /**/
+  }
+
+  .login input[type="text"], /**/
+  .login input[type="password"]{ /**/
+    width: 50px; /**/
+  }
+
+  .login button{ /**/
+    background-color: #4CAF50; /**/
+    color: #fff; /**/
+    border: none; /**/
+    cursor: pointer; /**/
+  }
