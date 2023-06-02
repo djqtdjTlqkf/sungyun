@@ -1,48 +1,48 @@
-.main{ /**/
-    height: 500px; /**/
-    position: relative; /**/
+.main{
+    height: 500px; /* 높이 500px */
+    position: relative; /* CSS 속성을 사용하여 요소의 위치를 상대적(relative)으로 설정하는 것을 의미합니다. */
 }
 
-.askedQuestion{ /**/
-    width: 900px; /**/
-    height: 250px; /**/
-    background-color: blue; /**/
-    position: absolute; /**/
-    top: 3%; /**/
-    left: 15%; /**/
-    border: solid black 1px; /**/
+.askedQuestion{
+    width: 900px; /* 가로 900px */
+    height: 250px; /* 높이 250px */
+    background-color: blue; /* 배경색 blue */
+    position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
+    top: 3%; /* CSS 속성을 사용하여 요소의 상단 위치를 상대적으로 설정하는 것을 의미합니다. */
+    left: 15%; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
+    border: solid black 1px; /* 모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다. */
 }
 
-.boardWrap{ /**/
-    width: 900px; /**/
-    height: 250px; /**/
-    background-color: yellow; /**/
-    position: absolute; /**/
-    top: 50%; /**/
-    left: 15%; /**/
-    border: solid black 1px; /**/
+.boardWrap{
+    width: 900px; /* 가로 900px */
+    height: 250px; /* 세로 250px */
+    background-color: yellow; /* 배경색 yellow로 지정 */
+    position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
+    top: 50%; /* CSS 속성을 사용하여 요소의 상단 위치를 상대적으로 설정하는 것을 의미합니다. */
+    left: 15%; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
+    border: solid black 1px; /* 모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다. */
 }
 
-.commit{ /**/
-    position: absolute; /**/
-    left: 800px; /**/
+.commit{
+    position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
+    left: 800px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
 }
 
- .login{ /**/
-    width: 170px; /**/
-    position: absolute; /**/
-    left: 1000px; /**/
-    border: 1px solid #ccc; /**/
+ .login{
+    width: 170px; /* 가로로 170px */
+    position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
+    left: 1000px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
+    border: 1px solid #ccc; /* 모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다. */
   }
 
-  .login input[type="text"], /**/
-  .login input[type="password"]{ /**/
-    width: 50px; /**/
+  .login input[type="text"], /*  CSS 선택자를 사용하여 로그인 폼에서 "input" 요소 중 "type" 속성이 "text"인 요소를 선택하는 것을 의미합니다. */
+  .login input[type="password"]{ /* CSS 선택자를 사용하여 로그인 폼에서 "input" 요소 중 "type" 속성이 "password"인 요소를 선택하는 것을 의미합니다. */
+    width: 50px; /* 가로로 50px */
   }
 
-  .login button{ /**/
-    background-color: #4CAF50; /**/
-    color: #fff; /**/
-    border: none; /**/
-    cursor: pointer; /**/
+  .login button{
+    background-color: #4CAF50; /* 배경색 #4CAF50 색 */
+    color: #fff; /*  */
+    border: none; /*  */
+    cursor: pointer; /*  */
   }
