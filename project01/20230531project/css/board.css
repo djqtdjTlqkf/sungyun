@@ -42,7 +42,7 @@
 
   .login button{
     background-color: #4CAF50; /* 배경색 #4CAF50 색 */
-    color: #fff; /*  */
-    border: none; /*  */
-    cursor: pointer; /*  */
+    color: #fff; /* 이건 모르겠음 */
+    border: none; /* CSS 속성을 사용하여 요소의 테두리(border)를 없애는 것을 의미합니다. */
+    cursor: pointer; /* CSS 속성을 사용하여 요소 위에 마우스 커서를 올렸을 때 커서의 모양을 포인터(pointer)로 변경하는 것을 의미합니다. */
   }
