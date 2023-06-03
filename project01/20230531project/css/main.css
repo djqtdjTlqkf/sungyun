@@ -73,7 +73,7 @@ a:link, a:visited { /**/
   height: 40px; /* 세로 40px */
 }
 
-.main {
+.main{
   background-color: skyblue; /* 배경색 skyblue */
   display: flex; /* CSS 속성 중 하나로, 요소를 유연한(flexible) 박스 모델로 표시하도록 지정하는 역할을 합니다. */
   justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
