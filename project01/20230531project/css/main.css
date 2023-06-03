@@ -2,8 +2,7 @@
 * { /**/
   margin: 0; /*모든 요소의 바깥쪽 여백을 0으로 설정합니다.*/
   padding: 0; /*모든 요소의 안쪽 여백을 0으로 설정합니다.*/
-  box-sizing: border-box; /*요소의 너비와 높이에 패딩과 테두리가 포함됩니다.*/
-  border: solid black 1px; /*모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다.*/
+  box-sizing: border-box; /*요소의 너비와 높이에 패딩과 테두리가 포함됩니다.*/ /*모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다.*/
 }
 
 li {
@@ -36,7 +35,7 @@ a:link, a:visited { /**/
   margin-bottom: 20px; /* 요소의 아래쪽 마진을 20픽셀로 설정하는 CSS 속성입니다. */
 }
 .hd .logo {
-  margin-left: 50px; /* 요소의 왼쪽 마진을 50픽셀로 설정하는 CSS 속성입니다. */
+  margin-left: 10px; /* 요소의 왼쪽 마진을 50픽셀로 설정하는 CSS 속성입니다. */
 }
 .hd .logo a {
   display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
