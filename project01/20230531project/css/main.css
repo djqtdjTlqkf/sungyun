@@ -23,7 +23,7 @@ a:link, a:visited { /**/
 }
 
 .container {
-  width: 1280px; /* 가로 1280*/
+  width: 1320px; /* 가로 1320px*/
   margin: 0 auto; /* 중앙에 위치하도록 설정 */
 }
 
@@ -78,7 +78,7 @@ a:link, a:visited { /**/
   display: flex; /* CSS 속성 중 하나로, 요소를 유연한(flexible) 박스 모델로 표시하도록 지정하는 역할을 합니다. */
   justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
   align-items: center; /* 지정된 컨테이너 요소의 자식 요소들을 수직 방향으로 가운데 정렬하는 CSS 속성입니다. */
-  height: 2000px; /* 높이 2000px */
+  height: 500px; /* 높이 2000px */
 }
 
 footer { /**/

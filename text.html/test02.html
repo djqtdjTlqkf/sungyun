@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-
+    <title>skd_page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/schedule.css">
 </head>
+
 <body>
-    
+    <!-- header 고정 -->
+    <header class="hd container">
+        <h1 class="logo"><a href="#">logo</a></h1>
+        <div class="hdWrap">
+            <div class="topmenu">
+                <ul>
+                    <li><a href="#">login</a></li>
+                    <li><a href="#">sign-up</a></li>
+                </ul>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- header 고정 -->
+    <section class="main container">
+<div class ="skdWrapper">
+        <div class="skdWrap">
+            <div class="skd">
+                <div class="dep">
+                    <form>
+                        <label>출발지 :
+                            <select name="dep">
+                                <option value="none">=== 선택 ===</option>
+                                <option value="GMP">김포</option>
+                                <option value="CJU">제주</option>
+                                <option value="PUS">부산</option>
+                                <option value="KWJ">광주</option>
+                                <option value="CJJ">청주</option>
+                            </select></label>
+                    </form>
+                </div>
+                <div class="dest">
+                    <form>
+                        <label>도착지 :
+                            <select name="dep">
+                                <option value="none">=== 선택 ===</option>
+                                <option value="GMP">김포</option>
+                                <option value="CJU">제주</option>
+                                <option value="PUS">부산</option>
+                                <option value="KWJ">광주</option>
+                                <option value="CJJ">청주</option>
+                            </select>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="opsWrap">
+                <div class="opsdate">
+
+                </div>
+                <button class="search">검색</button>
+
+            </div>
+        </div>
+
+        <div class="skdData">
+            skddata
+        </div>
+    </div>
+
+    </section>
+
+    <footer class="container">
+
+    </footer>
+
 </body>
+
 </html>
