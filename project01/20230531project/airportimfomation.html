@@ -65,8 +65,11 @@
     <script src="C:\Users\sungy\Downloads\bxslider-4-4.2.12.zip\bxslider-4-4.2.12\src\js"></script>
     <script src="C:\Users\sungy\Downloads\bxslider-4-4.2.12.zip\bxslider-4-4.2.12\src\css"></script>
     <script>
-      $(document).ready(function() {
-        $('.bxslider').bxSlider();
+      $(document).ready(function(){
+        $('.bxslider').bxSlider({
+          auto: true,    // 자동 슬라이드 활성화
+          pause: 1000    // 1초마다 슬라이드 전환
+        });
       });
     </script>
 </body>

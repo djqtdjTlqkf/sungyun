@@ -17,8 +17,25 @@
     cursor: pointer; /* CSS 속성을 사용하여 요소 위에 마우스 커서를 올렸을 때 커서의 모양을 포인터(pointer)로 변경하는 것을 의미합니다. */
 }
 .bxslider{
-    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.bxslider {
+    width: 100%;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .bxslider li {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .bxslider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
