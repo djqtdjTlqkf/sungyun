@@ -77,7 +77,7 @@ a:link, a:visited {
   display: flex;
   justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
   align-items: center;
-  height: 2000px;
+  height: 700px;
 }
 
 footer {
