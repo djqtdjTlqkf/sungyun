@@ -39,7 +39,9 @@
 }
 
 .airportmenu {
-    text-align: right; /* 오른쪽 정렬을 위해 부모 요소에 text-align 속성 추가 */
+    text-align: right;
+    position: sticky;
+    top: 0;
 }
 
 .airportmenu li {
@@ -52,6 +54,8 @@
 }
 
 .airportmenu li a{
+    width: 100px;
+    height: 100px;
     background-color: seagreen;
     float: right;
 }
