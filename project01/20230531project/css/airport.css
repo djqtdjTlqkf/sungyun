@@ -77,12 +77,14 @@
 .airportinfomation {
     display: flex;
     justify-content: space-between;
+    width: 700px;
 }
 
 .airportinfomation .card {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
 .airportinfomation img{
@@ -90,4 +92,6 @@
     height: 150px;
     margin-right: 10px;
     position: relative;
+    top: 440%;
+    left: 280%;
 }
