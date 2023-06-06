@@ -18,24 +18,21 @@
 }
 
 .bxslider{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.bxslider{
     width: 100%;
     height: 450px;
     margin: 0;
     padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
   
-.bxslider li {
+.bxslider li{
     width: 100%;
     height: 100vh;
 }
 
-.bxslider img {
+.bxslider img{
     width: 100%;
     height: 100vh;
     object-fit: cover;
