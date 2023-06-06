@@ -40,3 +40,16 @@
     height: 100vh;
     object-fit: cover;
 }
+
+.airportmenu li{
+    display: inline-block;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.airportmenu li a{
+    display: block;
+    background-color: seagreen;
+    width: 100px;
+    height: 100px;
+}
