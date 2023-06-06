@@ -39,9 +39,10 @@
 }
 
 .airportmenu {
-    text-align: right;
-    position: sticky;
-    top: 0;
+    text-align: left;
+    position: absolute;
+    top: 30%;
+    left: 20%;
 }
 
 .airportmenu li {
@@ -57,5 +58,9 @@
     width: 100px;
     height: 100px;
     background-color: seagreen;
-    float: right;
+    float: left;
+}
+
+.airportmap{
+    
 }
