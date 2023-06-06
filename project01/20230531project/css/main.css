@@ -74,7 +74,7 @@ a:link, a:visited {
 .main {
   background-color: skyblue;
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
+  justify-content: center; /*가로 중앙 정렬을 위한 justify-content 속성 추가*/
   align-items: center;
   height: 700px;
 }
@@ -83,4 +83,4 @@ footer {
   background-color: tomato;
   display: block;
   height: 300px;
-} /*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map*/
