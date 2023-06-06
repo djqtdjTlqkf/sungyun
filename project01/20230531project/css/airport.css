@@ -68,6 +68,9 @@
     width: 1200px;
 }
 
-.container{
-    
+.footer{
+    position: absolute;
+    top: 150%;
+    left: 7%;
+
 }
