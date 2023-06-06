@@ -38,7 +38,9 @@
     object-fit: cover;
 }
 
-.airportmenu li{
+.airportmenu li {
+    position: absolute;
+    top: 30%;
     display: inline-block;
     margin-left: 30px;
     text-align: center;
