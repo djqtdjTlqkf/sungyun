@@ -58,6 +58,7 @@
     width: 100px;
     height: 100px;
     background-color: seagreen;
+    float: left;
 }
 
 .airportmap img {
@@ -73,21 +74,16 @@
     left: 7%;
 }
 
-.airportinfo {
+.airportinfomation {
     display: flex;
     justify-content: space-between;
 }
 
-.airportinfo .card {
+.airportinfomation .card {
     list-style: none;
-}
+  }
 
-.airportinfo .card li {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.airportinfo img{
+.airportinfomation img{
     width: 150px;
     height: 150px;
     position: absolute;
