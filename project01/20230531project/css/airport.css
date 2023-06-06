@@ -61,6 +61,13 @@
     float: left;
 }
 
-.airportmap{
+.airportmap img {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 1200px;
+}
+
+.container{
     
 }
