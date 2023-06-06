@@ -74,9 +74,24 @@
     left: 7%;
 }
 
-.airportinfo{
+.airportinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.airportinfo .card {
+    list-style: none;
+}
+
+.airportinfo .card li {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.airportinfo img{
     width: 150px;
     height: 150px;
     position: absolute;
-    top: 70%;
+    top: 120%;
+    left: 30%;
 }
