@@ -38,20 +38,20 @@
     object-fit: cover;
 }
 
-.airportmenu li {
-    position: absolute;
-    top: 25%;
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    margin-right: 10px;
+.airportmenu {
+    text-align: right; /* 오른쪽 정렬을 위해 부모 요소에 text-align 속성 추가 */
 }
 
-.airportmenu li:last-child {
-    margin-right: 0; /* 마지막 요소는 간격을 없앰 */
+.airportmenu li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.airportmenu li:first-child {
+    margin-left: 0; /* 첫 번째 요소는 왼쪽 간격을 없앰 */
 }
 
 .airportmenu li a{
     background-color: seagreen;
-    display: inline-block;
+    float: right;
 }
