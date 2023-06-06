@@ -81,12 +81,13 @@
 
 .airportinfomation .card {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
   }
 
 .airportinfomation img{
     width: 150px;
     height: 150px;
-    position: absolute;
-    top: 120%;
-    left: 30%;
+    margin-right: 10px;
+    position: relative;
 }
