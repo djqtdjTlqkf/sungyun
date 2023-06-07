@@ -5,15 +5,6 @@
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-}
-
-a:link, a:visited {
-  text-decoration: none;
-  color: black;
-}
-
 .clearfix:after {
   content: "";
   display: block;
@@ -27,7 +18,8 @@ a:link, a:visited {
 
 .hd {
   height: 150px;
-  background-color: skyblue;
+  background-color: #4A87E2;
+  box-shadow: 0px 4px 50px 50px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,10 +52,24 @@ a:link, a:visited {
 }
 
 .hd .topmenu li a {
+  text-decoration: none;
   display: block;
-  background-color: tomato;
-  width: 80PX;
-  height: 25px;
+  background-color: rgb(225, 222, 222);
+  padding: 10px 20px;
+  color: #555;
+  border-radius: 20px;
+  width: 105PX;
+  height: 30px;
+}
+
+.hd .topmenu li a:hover{
+  background-color: #ccc;
+}
+
+.hd .menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .hd .menu li {
@@ -73,10 +79,18 @@ a:link, a:visited {
 }
 
 .hd .menu li a {
+  text-decoration: none;
   display: block;
-  background-color: tomato;
-  width: 100px;
+  background-color: rgb(225, 222, 222);
+  padding: 10px 20px;
+  color: #555;
+  width: 130px;
   height: 40px;
+  border-radius: 20px;
+}
+
+.hd .menu li a:hover{
+  background-color: #ccc;
 }
 
 footer {
