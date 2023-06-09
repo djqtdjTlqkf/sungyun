@@ -58,14 +58,21 @@
         function login() { //로그인 함수를 구현함
           var username = document.getElementById("username").value; // username 변수를 만들어서 username 아이디의 값을 웹상에서 받도록 구현함
           var password = document.getElementById("password").value; // password 변수를 만들어서 password 아이디의 값을 웹상에서 받도록 구현함
-    
+          var attemptCount = parseInt(document.getElementById("attemptCount").value);
           // 예시로 간단한 로그인 검증
-          if (username === "admin" && password === "password") { // username 변수와 password 변수에 값이 들어가면 alert로 띄어주게 만듬
-            alert("로그인 성공!"); //alert창에 로그인성공 이라는 창이 뜨게 만듬
-          } else { // 값이 없을시
-            alert("아이디 또는 비밀번호가 잘못되었습니다."); // 아이디 또는 비밀번호가 잘못되었습니다.
-          }
-        }
+            if (username === "admin" && password === "password") { // username 변수와 password 변수에 값이 들어가면 alert로 띄어주게 만듬
+                alert("로그인 성공!"); //alert창에 로그인성공 이라는 창이 뜨게 만듬
+            } else {
+                if (attemptCount < 5) {
+                attemptCount++;
+                alert("아이디 또는 비밀번호가 잘못되었습니다. 다시 시도해주세요.");
+                document.getElementById("attemptCount").value = attemptCount;
+            }
+            else { // 값이 없을시
+                alert("아이디 또는 비밀번호가 잘못되었습니다."); // 아이디 또는 비밀번호가 잘못되었습니다.
+                }
+            }
+         }
     </script>
     <footer class=""></footer> <!-- 맨 밑 하단 -->
 </body>
