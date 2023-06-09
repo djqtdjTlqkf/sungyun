@@ -1,88 +1,100 @@
 @charset "UTF-8";
-* { /**/
-  margin: 0; /*모든 요소의 바깥쪽 여백을 0으로 설정합니다.*/
-  padding: 0; /*모든 요소의 안쪽 여백을 0으로 설정합니다.*/
-  box-sizing: border-box; /*요소의 너비와 높이에 패딩과 테두리가 포함됩니다.*/
-  border: solid black 1px; /*모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-li {
-  list-style: none; /*li에 있는 순서를 없애는 방법*/
-}
-
-a:link, a:visited { /**/
-  text-decoration: none; /* CSS를 사용하여 텍스트의 장식 효과를 제거하는 속성입니다. 
-  일반적으로 링크(<a>) 요소에 사용하여 기본적으로 표시되는 밑줄을 제거하는 데 많이 활용됩니다.*/
-  color: black; /* 색상 블랙 */
-}
-
-.clearfix:after { /* CSS를 사용하여 부모 요소의 자식 요소들에 대한 높이 조절을 돕는 클래스입니다. */
-  content: ""; /* 내용(텍스트 내용이나 이미지를 추가)을 지정하는 속성입니다. */
-  display: block; /* CSS 속성 중 하나로, 요소를 블록 수준 요소로 표시하도록 지정하는 역할을 합니다. */
-  clear: both; /* CSS 속성으로, 플로팅(floating) 요소에 대한 영향을 해제하고 새로운 줄에서 시작하도록 지정하는 역할을 합니다. */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .container {
-  width: 1280px; /* 가로 1280*/
-  margin: 0 auto; /* 중앙에 위치하도록 설정 */
+  width: 1320px;
+  margin: 0 auto;
 }
 
 .hd {
-  height: 150px; /* 높이 값 150px */
-  background-color: skyblue; /* 배경색 skyblue */
-  display: flex; /* CSS 속성 중 하나로, 요소를 유연한(flexible) 박스 모델로 표시하도록 지정하는 역할을 합니다. */
-  justify-content: space-between; /* 지정된 컨테이너 요소 안의 자식 요소들을 가로 축에서 공간을 균등하게 분배하여 정렬하는 CSS 속성입니다. */
-  align-items: center; /* 지정된 컨테이너 요소의 자식 요소들을 수직 방향으로 가운데 정렬하는 CSS 속성입니다. */
-  margin-bottom: 20px; /* 요소의 아래쪽 마진을 20픽셀로 설정하는 CSS 속성입니다. */
+  height: 150px;
+  background-color: #4A87E2;
+  box-shadow: 0px 4px 50px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
+
 .hd .logo {
-  margin-left: 50px; /* 요소의 왼쪽 마진을 50픽셀로 설정하는 CSS 속성입니다. */
+  margin-left: 50px;
 }
+
 .hd .logo a {
-  display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
+  display: block;
 }
+
 .hd .hdWrap {
-  display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
-  margin-right: 50px; /* CSS 속성을 사용하여 오른쪽 여백(margin)을 50픽셀로 설정하는 것을 의미합니다. */
+  display: block;
+  margin-right: 50px;
 }
+
 .hd .topmenu {
-  padding-bottom: 20px; /* CSS 속성을 사용하여 하단 패딩(padding)을 20픽셀로 설정하는 것을 의미합니다. */
-  display: flex; /* CSS 속성 중 하나로, 요소를 유연한(flexible) 박스 모델로 표시하도록 지정하는 역할을 합니다. */
-  justify-content: end; /* CSS Flexbox 레이아웃에서 컨테이너의 주 축을 따라 정렬되는 요소들의 정렬 방식을 설정하는 속성입니다. */
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: end;
 }
+
 .hd .topmenu li {
-  display: inline-block; /* CSS 속성을 사용하여 요소를 인라인 블록(inline-block) 요소로 설정하는 것을 의미합니다. */
-  margin-left: 30px; /* 요소의 왼쪽 마진을 30픽셀로 설정하는 CSS 속성입니다. */
-  text-align: center; /* CSS 속성을 사용하여 텍스트를 가운데 정렬하는 것을 의미합니다. */
+  display: inline-block;
+  margin-left: 30px;
+  text-align: center;
 }
+
 .hd .topmenu li a {
-  display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
-  background-color: tomato; /* 배경색 tomato */
-  width: 80PX; /* 가로 80px */
-  height: 25px; /* 높이 25px */
+  text-decoration: none;
+  display: block;
+  background-color: rgb(225, 222, 222);
+  padding: 10px 20px;
+  color: #555;
+  border-radius: 20px;
+  width: 105PX;
+  height: 30px;
 }
+
+.hd .topmenu li a:hover{
+  background-color: #ccc;
+}
+
+.hd .menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .hd .menu li {
-  display: inline-block; /* CSS 속성을 사용하여 요소를 인라인 블록(inline-block) 요소로 설정하는 것을 의미합니다. */
-  margin-left: 30px; /* 요소의 왼쪽 마진을 30픽셀로 설정하는 CSS 속성입니다. */
-  text-align: center; /* CSS 속성을 사용하여 텍스트를 가운데 정렬하는 것을 의미합니다. */
+  display: inline-block;
+  margin-left: 30px;
+  text-align: center;
 }
+
 .hd .menu li a {
-  display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
-  background-color: tomato; /* 배경색 tomato */
-  width: 100px; /* 가로 100px */
-  height: 40px; /* 세로 40px */
+  text-decoration: none;
+  display: block;
+  background-color: rgb(225, 222, 222);
+  padding: 10px 20px;
+  color: #555;
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
 }
 
-.main {
-  background-color: skyblue; /* 배경색 skyblue */
-  display: flex; /* CSS 속성 중 하나로, 요소를 유연한(flexible) 박스 모델로 표시하도록 지정하는 역할을 합니다. */
-  justify-content: center; /* 가로 중앙 정렬을 위한 justify-content 속성 추가 */
-  align-items: center; /* 지정된 컨테이너 요소의 자식 요소들을 수직 방향으로 가운데 정렬하는 CSS 속성입니다. */
-  height: 2000px; /* 높이 2000px */
+.hd .menu li a:hover{
+  background-color: #ccc;
 }
 
-footer { /**/
-  background-color: tomato; /* 배경색 tomato */
-  display: block; /* 속성은 HTML에서 요소를 블록 수준 요소로 정의하는 데 사용됩니다. */
-  height: 300px; /* 높이 300px */
+footer {
+  background-color: tomato;
+  display: block;
+  height: 300px;
 }

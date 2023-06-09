@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport_gimpo page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/airport.css">
+</head>
+<body>
+    <!--  header 고정-->
+    <header class ="hd container">
+        <h1 class = "logo"><a href="main.html"><img src="../20230531project/aircraftficture/메인로고.png" alt="로고"></a></h1>
+      <div class = "hdWrap">
+        <div class ="topmenu">
+            <ul>
+                <div class="login"> <!-- 메뉴바를 한번 둘러쌈 -->
+                    <input type="text" id="username" placeholder="아이디"> <!-- 텍스트 형식의 아이디를 만듬 -->
+                    <input type="password" id="password" placeholder="비밀번호"> <!-- 패스워드를 적어서 비밀번호를 넣을 수 있게 만듬 -->
+                    <button onclick="login()">로그인</button> <!-- 로그인하면 onclick으로 걸린 링크로 들어갈 수 있게 만듬 -->
+                </div>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </div>
+        <nav class = "menu">
+            <ul>
+                <li><a href="airport.html">공항정보</a></li>
+                <li><a href="borad.html">질문게시판</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <!-- header 고정 -->
+    <section class = "main">
+       <nav class = "airportmenu">
+            <li><a href="#">김포</a></li>
+            <li><a href="#">제주</a></li>
+            <li><a href="#">김해</a></li>
+            <li><a href="#">청주</a></li>
+            <li><a href="#">광주</a></li>
+        </nav>
+    <hr>
+    <div class = "airportmap"><img src="../20230531project/gimpo/김포공항 약도.png"></div>
+    
+    <article class = "airportinfomation">
+        <ul class = "card">
+            <li><img src="../20230531project/gimpo/비행기01.jpeg" alt="#"></li>
+            <li><img src="../20230531project/gimpo/비행기02.jpg" alt="#"></li>
+            <li><img src="../20230531project/gimpo/비행기03.jpg" alt="#"></li>
+        </ul>
+
+    </article>
+   
+
+
+    </section>
+
+    <footer class = "footer container">
+
+    </footer>
+    
+</body>
+</html>
