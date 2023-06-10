@@ -21,7 +21,7 @@
         <label for="recommendation">추천 내용:</label>
         <input type="text" id="recommendation" required>
         <select id="language">
-            <option value="HTML">친구추천</option>
+            <option value="친구추천">친구추천</option>
         </select>
         <button type="submit">추천하기</button>
     </form>
@@ -43,7 +43,7 @@
         function showConfirmation() {
             const recommendation = recommendationInput.value;
             const language = languageSelect.value;
-            const confirmation = confirm(`추천하기를 하시겠습니까?\n추천 내용: ${recommendation}\n언어: ${language}`);
+            const confirmation = confirm(`추천하기를 하시겠습니까?\n친구이름: ${recommendation}\n확인: ${language}`);
 
             if (confirmation) {
                 addRecommendation();
