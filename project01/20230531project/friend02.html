@@ -1,76 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>추천 기능</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>언어 추천</h1>
-    <form id="recommendationForm">
-        <label for="recommendation">추천 내용:</label>
-        <input type="text" id="recommendation" required>
-        <select id="language">
-            <option value="친구추천">친구추천</option>
-        </select>
-        <button type="submit">추천하기</button>
-    </form>
-    <h2>추천 목록</h2>
-    <ul id="recommendationList"></ul>
-
     <script>
-        const form = document.getElementById('recommendationForm');
-        const recommendationInput = document.getElementById('recommendation');
-        const languageSelect = document.getElementById('language');
-        const recommendationList = document.getElementById('recommendationList');
-        const friends = new Set();
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            showConfirmation();
+        import { onMount } from 'svelte';
+      
+        let friendId;
+        let currentUser;
+        let requestList = [];
+      
+        onMount(() => {
+          // 페이지 로드 시 초기화 작업
+          currentUser = getCurrentUser(); // 현재 사용자 정보 가져오는 함수 호출
+          getRequestList(); // 친구 요청 목록을 가져오는 함수 호출
         });
-
-        function showConfirmation() {
-            const recommendation = recommendationInput.value;
-            const language = languageSelect.value;
-            const confirmation = confirm(`추천하기를 하시겠습니까?\n친구이름: ${recommendation}\n확인: ${language}`);
-
-            if (confirmation) {
-                addRecommendation();
-                askForFriendship(recommendation, language);
+      
+        async function sendFriendRequest() {
+          if (friendId && currentUser) {
+            const response = await fetch('/api/friend/request', {
+              method: 'POST',
+              body: JSON.stringify({ from: currentUser.id, to: friendId }),
+              headers: { 'Content-Type': 'application/json' }
+            });
+      
+            if (response.ok) {
+              // 성공적으로 요청을 보냈을 때의 처리
+              console.log('친구 요청을 보냈습니다.');
+              getRequestList(); // 친구 요청 목록 갱신
+            } else {
+              // 요청 실패 시의 처리
+              console.error('친구 요청을 보내는 중에 오류가 발생했습니다.');
             }
+          }
         }
-
-        function askForFriendship(recommendation, language) {
-            const confirmation = confirm('친구가 되시겠습니까?');
-
-            if (confirmation) {
-                const friend = recommendation + ' (' + language + ')';
-                friends.add(friend);
-                addFriendToList(friend);
-            }
+      
+        async function acceptFriendRequest(request) {
+          const response = await fetch('/api/friend/accept', {
+            method: 'POST',
+            body: JSON.stringify({ requestId: request.id }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+      
+          if (response.ok) {
+            // 성공적으로 수락했을 때의 처리
+            console.log('친구 요청을 수락했습니다.');
+            getRequestList(); // 친구 요청 목록 갱신
+          } else {
+            // 수락 실패 시의 처리
+            console.error('친구 요청을 수락하는 중에 오류가 발생했습니다.');
+          }
         }
-
-        function addRecommendation() {
-            const recommendation = recommendationInput.value;
-            const language = languageSelect.value;
-
-            const li = document.createElement('li');
-            li.textContent = recommendation + ' (' + language + ')';
-            recommendationList.appendChild(li);
-
-            recommendationInput.value = '';
+      
+        async function declineFriendRequest(request) {
+          const response = await fetch('/api/friend/decline', {
+            method: 'POST',
+            body: JSON.stringify({ requestId: request.id }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+      
+          if (response.ok) {
+            // 성공적으로 거절했을 때의 처리
+            console.log('친구 요청을 거절했습니다.');
+            getRequestList(); // 친구 요청 목록 갱신
+          } else {
+            // 거절 실패 시의 처리
+            console.error('친구 요청을 거절하는 중에 오류가 발생했습니다.');
+          }
         }
-    </script>
+      
+        async function getRequestList() {
+          const response = await fetch('/api/friend/requests');
+          if (response.ok) {
+            requestList = await response.json();
+          } else {
+            console.error('친구 요청 목록을 가져오는 중에 오류가 발생했습니다.');
+          }
+        }
+      </script>
+      
+      <h1>친구 요청 보내기</h1>
+      
+      <input type="text" bind:value={friendId} placeholder="친구 아이디">
+      <button on:click={sendFriendRequest}>요청 보내기</button>
+      
+      <h2>친구 요청 목록</h2>
+      <ul>
+        {#each requestList as request}
+          <li>
+            {request.from} 님의 친구 요청
+            <button on:click={() => acceptFriendRequest(request)}>수락</button>
+            <button on:click={() => declineFriendRequest(request)}>거절</button>
+          </li>
+        {/each}
+      </ul>
+      
 </body>
 </html>
