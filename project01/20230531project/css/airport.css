@@ -41,8 +41,8 @@
 .airportmenu {
     text-align: left;
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 17%;
+    left: 25%;
 }
 
 .airportmenu li {
@@ -63,16 +63,18 @@
 
 .airportmap img {
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 30%;
+    left: 15%;
     width: 1200px;
 }
 
 .footer{
+    width: 1320px;
+    margin: 0 auto;
     position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     bottom: 0;
-    transform: translateX(-50%);
 }
 
 .airportinfomation {
