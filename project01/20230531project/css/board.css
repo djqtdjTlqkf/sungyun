@@ -1,5 +1,4 @@
 .main{
-    height: 500px; /* 높이 500px */
     position: relative; /* CSS 속성을 사용하여 요소의 위치를 상대적(relative)으로 설정하는 것을 의미합니다. */
 }
 
@@ -31,7 +30,7 @@
  .login{
     width: 170px; /* 가로로 170px */
     position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
-    left: 1000px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
+    left: 1400px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
     border: 1px solid #ccc; /* 모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다. */
   }
 
