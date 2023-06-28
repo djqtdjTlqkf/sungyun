@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            background: url(/project01/aircraftficture/메인\ 2.png);
+            background-size: cover;
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: url(/project01/aircraftficture/첫페이지로고.png);
+            background-size: cover;
+            width: 10vw;
+            height: 10vh;
+        }
+
+        .airplane {
+        width: 25vw;
+        height: 25vh;
+        background: url(/project01/aircraftficture/비행기아이콘2.png);
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: flyaway 5s forwards;
+        }
+
+        @keyframes flyaway {
+        0% {
+        transform: translateX(0);
+        }
+        100% {
+        transform: translateX(70vw) translateY(-70vh);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="airplane"></div>
+
+    <script>
+    const airplane = document.querySelector('.airplane');
+    airplane.addEventListener('animationend', () => {
+        airplane.classList.add('hidden'); // 비행기 요소를 숨김
+        window.location.href = 'main.html'; // 여기에 이동할 페이지의 URL을 입력하세요.
+    });
+    </script>
+</body>
+</html>
