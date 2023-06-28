@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>추천 기능</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>언어 추천</h1>
+    <form id="recommendationForm">
+        <label for="recommendation">추천 내용:</label>
+        <input type="text" id="recommendation" required>
+        <select id="language">
+            <option value="친구추천">친구추천</option>
+        </select>
+        <button type="submit">추천하기</button>
+    </form>
+    <h2>추천 목록</h2>
+    <ul id="recommendationList"></ul>
+
+    <script>
+        const form = document.getElementById('recommendationForm');
+        const recommendationInput = document.getElementById('recommendation');
+        const languageSelect = document.getElementById('language');
+        const recommendationList = document.getElementById('recommendationList');
+        const friends = new Set();
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            showConfirmation();
+        });
+
+        function showConfirmation() {
+            const recommendation = recommendationInput.value;
+            const language = languageSelect.value;
+            const confirmation = confirm(`추천하기를 하시겠습니까?\n친구이름: ${recommendation}\n확인: ${language}`);
+
+            if (confirmation) {
+                addRecommendation();
+                askForFriendship(recommendation, language);
+            }
+        }
+
+        function askForFriendship(recommendation, language) {
+            const confirmation = confirm('친구가 되시겠습니까?');
+
+            if (confirmation) {
+                const friend = recommendation + ' (' + language + ')';
+                friends.add(friend);
+                addFriendToList(friend);
+            }
+        }
+
+        function addRecommendation() {
+            const recommendation = recommendationInput.value;
+            const language = languageSelect.value;
+
+            const li = document.createElement('li');
+            li.textContent = recommendation + ' (' + language + ')';
+            recommendationList.appendChild(li);
+
+            recommendationInput.value = '';
+        }
+    </script>
+</body>
+</html>

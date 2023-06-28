@@ -1,7 +1,7 @@
 .login{
     width: 170px; /* 가로로 170px */
     position: absolute; /* CSS 속성을 사용하여 요소의 위치를 절대적(absolute)으로 설정하는 것을 의미합니다. */
-    left: 1000px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
+    left: 1400px; /* CSS 속성을 사용하여 요소의 좌측 위치를 상대적으로 설정하는 것을 의미합니다. */
     border: 1px solid #ccc; /* 모든 요소에 대해 검은색 1픽셀 실선 테두리를 적용합니다. */
 }
 
@@ -41,8 +41,8 @@
 .airportmenu {
     text-align: left;
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 17%;
+    left: 25%;
 }
 
 .airportmenu li {
@@ -63,15 +63,18 @@
 
 .airportmap img {
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 30%;
+    left: 24%;
     width: 1200px;
 }
 
 .footer{
+    width: 1320px;
+    margin: 0 auto;
     position: absolute;
-    top: 150%;
-    left: 7%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .airportinfomation {
@@ -92,6 +95,6 @@
     height: 150px;
     margin-right: 10px;
     position: relative;
-    top: 440%;
-    left: 280%;
+    top: 500%;
+    left: 500%;
 }
