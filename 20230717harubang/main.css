@@ -53,6 +53,7 @@ a:link,a:visited{text-decoration: none; color:black;}
 }
 
 .Notice{
+    margin-left: 50px;
     padding: 10px;
     width: 900px;
     margin-top: 30px;
@@ -70,6 +71,12 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+}
+
+.noticeBoard:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .qnaBoard{
@@ -77,13 +84,26 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+}
+
+.qnaBoard:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .commit{
+    width: 150px;
     font-size: 20px;
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+}
+
+.commit:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .noticeBoard,
@@ -112,6 +132,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color:  chocolate;
+    transition: background-color 0.3s;
+}
+
+.writeNumber:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .Categories{
@@ -119,6 +147,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Categories:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .Title{
@@ -126,6 +162,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Title:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .Writer{
@@ -133,6 +177,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Writer:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .Date{
@@ -140,6 +192,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Date:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .Hits{
@@ -147,6 +207,14 @@ a:link,a:visited{text-decoration: none; color:black;}
     border: 1px solid #000;
     padding: 10px;
     cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Hits:hover{
+    color: wheat;
+    background-color: blue;
 }
 
 .writeNumber,
