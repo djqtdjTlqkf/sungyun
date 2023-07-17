@@ -137,11 +137,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     transition: background-color 0.3s;
 }
 
-.writeNumber:hover{
-    color: wheat;
-    background-color: blue;
-}
-
 .Categories{
     font-size: 20px;
     border: 1px solid #000;
@@ -150,11 +145,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     border-radius: 25px;
     background-color: chocolate;
     transition: background-color 0.3s;
-}
-
-.Categories:hover{
-    color: wheat;
-    background-color: blue;
 }
 
 .Title{
@@ -167,10 +157,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     transition: background-color 0.3s;
 }
 
-.Title:hover{
-    color: wheat;
-    background-color: blue;
-}
 
 .Writer{
     font-size: 20px;
@@ -182,10 +168,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     transition: background-color 0.3s;
 }
 
-.Writer:hover{
-    color: wheat;
-    background-color: blue;
-}
 
 .Date{
     font-size: 20px;
@@ -197,11 +179,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     transition: background-color 0.3s;
 }
 
-.Date:hover{
-    color: wheat;
-    background-color: blue;
-}
-
 .Hits{
     font-size: 20px;
     border: 1px solid #000;
@@ -212,10 +189,6 @@ a:link,a:visited{text-decoration: none; color:black;}
     transition: background-color 0.3s;
 }
 
-.Hits:hover{
-    color: wheat;
-    background-color: blue;
-}
 
 .writeNumber,
 .Categories,
@@ -224,4 +197,11 @@ a:link,a:visited{text-decoration: none; color:black;}
 .Date,
 .Hits{
     flex: 1;;
+}
+
+.blue {
+    color: wheat;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 25px;
 }

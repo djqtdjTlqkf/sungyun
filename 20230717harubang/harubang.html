@@ -12,38 +12,43 @@
             <div class="Board clearfix">
                 <h1 class="boardWrap">BOARD</h1>
             </div>
-            <div class="Notice blue">
+            <div class="Notice">
                 <ul class="Noticeli clearfix">
-                    <li id="openBoard" class="noticeBoard">자유게시판</li>
-                    <li id="openBoard" class="qnaBoard">QnA 게시판</li>
-                    <li id="openBoard" class="commit">글 등록</li>
+                    <li class="noticeBoard" onclick="toggleBlueColor(event)">자유게시판</li>
+                    <li class="qnaBoard" onclick="toggleBlueColor(event)">QnA 게시판</li>
+                    <li class="commit" onclick="toggleBlueColor(event)">글 등록</li>
                 </ul>
             </div>
-            <div class="navBar blue">
+            <div class="navBar">
                 <ul class="navBarli clearfix">
-                    <li id="openBoard" class="writeNumber">글 번호</li>
-                    <li id="openBoard" class="Categories">카테고리</li>
-                    <li id="openBoard" class="Title">제목</li>
-                    <li id="openBoard" class="Writer">작성자</li>
-                    <li id="openBoard" class="Date">등록일</li>
-                    <li id="openBoard" class="Hits">조회수</li>
+                    <li class="writeNumber">글 번호</li>
+                    <li class="Categories">카테고리</li>
+                    <li class="Title">제목</li>
+                    <li class="Writer">작성자</li>
+                    <li class="Date">등록일</li>
+                    <li class="Hits">조회수</li>
                 </ul>
             <div>
         </div>
     </div>
 
-    <div class="openBoard" onmousedown="setBlueColor(this)" onmouseup="resetBlueColor(this)"></div>
-
     <script>
-        function setBlueColor(element) {
-        const element = event.target;
-        element.classList.add('blue');
-    }
-  
-    function resetBlueColor(element) {
-        const element = event.target;
-        element.classList.remove('blue');
-    }
+        function toggleBlueColor(event) {
+            const element = event.target;
+            const alreadyBlue = element.classList.contains('blue');
+
+            // 중복 클릭 방지
+            if (alreadyBlue) {
+                element.classList.remove('blue');
+            } else {
+                // 다른 요소에서 파란색 제거
+                const elements = document.querySelectorAll('.Notice li, .navBar li');
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].classList.remove('blue');
+                }
+                element.classList.add('blue');
+            }
+        }
     </script>
 
 
