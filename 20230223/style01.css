@@ -5,6 +5,7 @@
     display: block;
     clear: both;
 }
+
 li{list-style: none;}
 div.line{
     width: 1250px;
