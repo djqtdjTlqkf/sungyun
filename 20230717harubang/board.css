@@ -6,7 +6,7 @@
     width: 700px;
     height: 450px;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 20%;
     border: 1px solid #000;
 }
@@ -14,7 +14,7 @@
 .askedCommit{
     width: 700px;
     position: absolute;
-    top: 69%;
+    top: 63%;
     display: flex;
     justify-content: space-between;
 }
@@ -62,7 +62,7 @@
 .writeTitle{
     width: 700px;
     position: absolute;
-    top: 75%;
+    top: 70%;
     display: flex;
     justify-content: right;
 }

@@ -19,7 +19,6 @@ a:link,a:visited{text-decoration: none; color:black;}
 
 .Wrap{
     position: relative;
-    text-align: center;
     width: 1200px;
     height: 1200px;
     background-color: #ffd44a;
@@ -27,25 +26,23 @@ a:link,a:visited{text-decoration: none; color:black;}
 }
 
 .txtWrap{
-    text-align: center;
     width: 900px;
-    height: 100%;
+    height: 1080px;
     background-color: white;
     margin: 0 auto;
 }
 
-
 .boardWrap{
     float: left;
     font-size: 50px;
-    margin-top: 220px;
+    margin-top: 30px;
     margin-left: 70px;
 }
 
 .boardWrap::after{
     content: "";
     position: absolute;
-    bottom: 900px;
+    bottom: 1100px;
     left: 220px;
     width: 300px;
     height: 3px;
