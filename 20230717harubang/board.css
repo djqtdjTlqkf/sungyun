@@ -1,0 +1,68 @@
+.Wrap{
+    position: relative;
+}
+
+.totalBoard{
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    border: 1px solid #000;
+}
+
+.askedCommit{
+    width: 700px;
+    position: absolute;
+    top: 69%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleCommit{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+}
+
+.titleUpdate{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+}
+
+.titleDelete{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+}
+
+.title{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+}
+
+.writeTitle{
+    width: 700px;
+    position: absolute;
+    top: 75%;
+    display: flex;
+    justify-content: right;
+}
