@@ -110,6 +110,7 @@ a:link,a:visited{text-decoration: none; color:black;}
 
 }
 .commit{
+    text-align: center;
     margin-left: auto;
     margin-right: 100px;
 }
