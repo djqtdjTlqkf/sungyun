@@ -5,29 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="board.css">
-    <title>harubangBoard</title>
+    <title>title</title></title>
 </head>
 <body>
     <div class="Wrap clearfix">
         <div class="txtWrap">
             <div class="Board clearfix">
-                <h1 class="boardWrap">글 쓰기</h1>
+                <h1 class="boardWrap">글 보기</h1>
                 <section class ="totalBoard" style="display: flex; justify-content: center;"> <!-- 자주 묻는 질문 및 질문 게시판을 전체로 한번 더 둘러쌈 -->
                     <div class="askedQuestion"> <!-- 자주 묻는 질문 게시판임 -->
                 <!-- FAQ 게시글 -->
                         <div class="askedBoard" style="text-align: left; margin-top: 35px;"> <!-- 질문 게시판임 -->
                             <div class="subTitle1"> <!-- 제목에 질문을 어떤걸 할지 정함 -->
-                                제목<input type="text" placeholder="제목" style="display: flex; justify-content: center; width: 500px; margin-left: 30px;"> <!-- -->
+                                <div>
+                                    제목<input type="text" placeholder="제목" style="width: 150px; margin-left: 20px; margin-right: 95px;">
+                                    아이디<input type="text" placeholder="제목" style="width: 150px; margin-left: 20px;">
+                                </div>
                             </div>
                             <div class="subTitle2"> <!-- 질문 부류를 세부적으로 정해서 할 수 있도록 구현함 -->
                                 카테고리
-                                <select type="text" placeholder="긴급" style="display: flex; justify-content: center; width: 100px; margin-left: 30px;" onchange="selectCategory(event)">
+                                <select type="text" placeholder="긴급" style="display: flex; justify-content: center; width: 150px; margin-left: 50px;" onchange="selectCategory(event)">
                                     <option value="">선택</option>
                                     <option value="카테고리1">긴급</option>
                                     <option value="카테고리2">자유</option>
                                     <option value="카테고리3">동행</option>
                                     <option value="카테고리4">교환</option>
                                 </select>
+                            </div>
+                            <div class="subTitle1">
+                                <div style="display: flex; justify-content: left; align-items: center;">
+                                    작성일<input type="text" placeholder="제목" style="width: 150px; margin-top: 5px; margin-bottom: 5px; margin-left: 2px; margin-right: 290px;">
+                                    <button type="text" placeholder="제목">수정
+                                </div>       
                             </div>
                             <div class="subTitle3"> <!-- 질문에 대한 내용을 상세하게 작성할 수 있도록 구현함 -->
                                 내용<input type="text" placeholder="게시글작성" style="display: flex; justify-content: center; width: 500px; height: 300px; margin-left: 30px;"> <!-- -->
@@ -36,11 +45,6 @@
                     </div>
                 </div>
                 <div class="totalCommit" style="display: flex; justify-content: center;">
-                    <div class="askedCommit">
-                        <button type="submit" class="titleCommit" onclick="myFunction()">글 등록</button>
-                        <button type="submit" class="titleUpdate" style="display: flex; justify-content: center; margin-left: 150px;" onclick="myFunction()">글 수정</button>
-                        <button type="submit" class="titleDelete" onclick="myFunction()">글 삭제</button>
-                    </div>
                     <div class="writeTitle">
                         <button type="submit" class="title" onclick="myFunction()">글 목록</button>
                     </div>
