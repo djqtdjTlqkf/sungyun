@@ -6,39 +6,501 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            border: 1px solid black;
-            display: flex;
-            justify-content: space-between;
-        }
-        .a{
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
-        .b{
-            width: 100px;
-            height: 100px;
-            background-color: black;
-        }
-        .c{
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-        }
-        .d{
-            width: 100px;
-            height: 100px;
-            background-color:aqua;
-        }
+    @charset "utf-8";
+html,body{height: 100%;}
+*{margin: 0; padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a:link,a:visited{text-decoration: none; color:black;}
+
+@font-face {
+    font-family: 'GangwonState';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/GangwonState.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.Wrap{
+    position: relative;
+    width: 1200px;
+    height: 1200px;
+    background-color: #ffd44a;
+    margin: 0 auto;
+}
+
+.txtWrap{
+    width: 900px;
+    height: 1080px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.boardWrap{
+    float: left;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-left: 70px;
+}
+
+.boardWrap::after{
+    content: "";
+    position: absolute;
+    bottom: 1100px;
+    left: 220px;
+    width: 300px;
+    height: 3px;
+    background-color: #ffd44a;
+}
+
+.Notice{
+    margin-left: 50px;
+    padding: 10px;
+    width: 900px;
+    margin-top: 30px;
+    float: left;
+}
+
+.Noticeli{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.noticeBoard{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.noticeBoard:hover{
+    color: wheat;
+    background-color: blue;
+}
+
+.qnaBoard{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.qnaBoard:hover{
+    color: wheat;
+    background-color: blue;
+}
+
+.commit{
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.commit:hover{
+    color: wheat;
+    background-color: blue;
+}
+
+.noticeBoard,
+.qnaBoard{
+    flex: 0 0 auto;
+    margin-right: 0;
+
+}
+.commit{
+    text-align: center;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.navBar{
+    padding: 10px;
+    width: 900px;
+    float: left;
+}
+
+.navBarli{
+    display: flex;
+}
+
+.writeNumber{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color:  chocolate;
+    transition: background-color 0.3s;
+}
+
+.Categories{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Title{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+
+.Writer{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+
+.Date{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+.Hits{
+    font-size: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: chocolate;
+    transition: background-color 0.3s;
+}
+
+
+.writeNumber,
+.Categories,
+.Title,
+.Writer,
+.Date,
+.Hits{
+    flex: 1;;
+}
+
+.blue {
+    color: wheat;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 25px;
+}
+
+.outer {
+	position: absolute;
+	top: 60%;
+	width: 900px;
+	margin: auto;
+}
+
+.wrap {
+	width: 100%;
+	margin: 100px auto;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+.board_title {
+	border-bottom: 1px solid #282A35;
+}
+
+.board_list {
+	margin: 20px 30px;
+	min-height: 565px;
+}
+
+.board_list>ul {
+	border-bottom: 1px solid #f3f5f7;
+	height: 50px;
+	line-height: 50px;
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+
+.board_list>ul.last {
+	border: 0;
+}
+
+.board_list>ul>li {
+	text-align: center;
+}
+
+.board_header {
+	background: #282A35;
+	color: white;
+	font-weight: bold;
+}
+
+.board_list .id {
+	width: 60px;
+}
+
+.board_list .category {
+	width: 60px;
+}
+
+.board_list .title {
+	width: 350px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.board_list .writer {
+	width: 80px;
+}
+
+.board_list .count {
+	width: 60px;
+}
+
+.board_list .date {
+	width: 100px;
+}
+
+.onmouseover {
+	background: #f3f5f7;
+	cursor: pointer;
+}
+
+.board_paging {
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: auto;
+}
+
+.board_paging a {
+	text-decoration: none;
+	color: #282A35;
+	width: 40px;
+	display: block;
+	text-align: center;
+}
+
+.board_paging a.current_page {
+	border-bottom: 2px solid #282A35;
+	font-weight: bold;
+}
+
+.search_area {
+	text-align: center;
+	padding: 30px;
+}
+
+.search_area select {
+	width: 150px;
+	height: 30px;
+	border: 0px;
+	border: 1px solid #000;
+}
+
+.input_area {
+	border: solid 1px black;
+	padding: 5px 5px 10px 5px;
+	margin-right: 20px;
+	background: white;
+}
+
+.input_area input {
+	width: 250px;
+	height: 30px;
+	border: 0px;
+}
+
+.input_area input:focus, .search_area select:focus {
+	outline: none;
+}
+
+.search_area button {
+	width: 100px;
+	height: 35px;
+	border: 0px;
+	color: white;
+	background: #282A35;
+	margin: 5px;
+}
     </style>
 </head>
 <body>
-    <div class="c">
-        <div class="d">
+    <div class="Wrap clearfix">
+        <div class="txtWrap">
+            <div class="Board clearfix">
+                <h1 class="boardWrap">BOARD</h1>
+            </div>
+            <div class="Notice">
+                <ul class="Noticeli clearfix">
+                    <li class="noticeBoard" onclick="toggleBlueColor(event)">자유게시판</li>
+                    <li class="qnaBoard" onclick="toggleBlueColor(event)">QnA 게시판</li>
+                    <li class="commit" onclick="toggleBlueColor(event)">글 등록</li>
+                </ul>
+            </div>
+            <div class="navBar">
+                <ul class="navBarli clearfix" style="text-align: center;">
+                    <li class="writeNumber">글 번호</li>
+                    <li class="Categories">카테고리</li>
+                    <li class="Title">제목</li>
+                    <li class="Writer">작성자</li>
+                    <li class="Date">등록일</li>
+                    <li class="Hits">조회수</li>
+                </ul>
+            <div>
         </div>
     </div>
-    <div class="a"></div>
-    <div class="b"></div>
+	<div class="outer">
+		<div class="wrap">
+			<div class="board_area">
+				<div class="board_title">
+				<c:forEach var="list" items="${boardList}">
+				<ul class="board_ul" onclick="detailView(${list.bid})">
+					<li class="id">${list.bid }</li>
+					<li class="category">${list.cname }</li>
+					<li class="title">${list.btitle }</li>
+					<li class="writer">${list.userName }</li>
+					<li class="count">${list.bcount }</li>
+					<li class="date">${list.createDate }</li>
+				</ul>
+				</c:forEach>
+			</div>
+			
+			<c:if test="${param.searchCondition != null && param.searchValue != null }">
+				<c:set var="searchStatus" value="&searchCondition=${param.searchCondition}&searchValue=${param.searchValue}"/>
+			</c:if>
+			<ul class="board_paging">
+			
+				<!-- 첫페이지로  -->
+				<li>
+					<a href="${contextPath}/board/list?page=1${searchStatus}">&lt;&lt;</a>
+				</li>
+				
+				<!-- 이전 페이지로 -->
+				<li>
+				<c:choose>
+					<c:when test="${pi.page == 1}">
+						<a href="javascript:;">&lt;</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${ contextPath }/board/list?page=${pi.page - 1}${searchStatus}">&lt;</a>
+					</c:otherwise>				
+				</c:choose>
+				</li>
+				
+				<c:forEach var="p" begin="${pi.startPage}" end="${pi.endPage}">
+					<li>
+						<a href="${contextPath}/board/list?page=${p}${searchStatus}"> <c:if test="${p == pi.page }">
+					</c:if>>&gt;${p}</a>
+					</li>
+				</c:forEach>
+				
+				<!-- 다음페이지로 -->
+				<li>
+				<c:choose>
+					<c:when test="${pi.page == pi.maxPage}">
+						<a href="javascript:;">&gt;</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${ contextPath }/board/list?page=${pi.page + 1}${searchStatus}">&gt;</a>
+					</c:otherwise>				
+				</c:choose>
+				</li>
+				
+				<!-- 끝페이지로  -->
+				<li>
+					<a href="${contextPath}/board/list?page=${pi.maxPage}${searchStatus}">&gt;&gt;</a>
+				</li>
+			</ul>
+			<div class="search_area">
+				<form method="get">
+					<select id="searchCondition" name="searchCondition">
+						<option value="title">제목</option>
+						<option value="content">내용</option>
+						<option value="writer">작성자</option>
+					</select> 
+					<span class="input_area"> 
+						<input type="search" name="searchValue" value="${ param.searchValue }">
+					</span>
+					<button type="submit">검색하기</button>
+					<c:if test="${!empty userLogin}">
+						<button type="button" onclick="location.href='${contextPath}/board/insert'">작성하기</button>
+					</c:if>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+	const board_ul = document.querySelector('.board_list');
+	board_ul.addEventListener('mouseover', function(){
+		if(event.target.classList.contains("board_ul")){
+			event.target.classList.add('onmouseover');
+		}else if(event.target.parentNode.classList.contains('board_ul')){
+			event.target.parentNode.classList.add('onmouseover');
+		}
+	})
+	
+	board_ul.addEventListener('mouseout', function(){
+		if(event.target.classList.contains("board_ul")){
+			event.target.classList.remove('onmouseover');
+		}else if(event.target.parentNode.classList.contains('board_ul')){
+			event.target.parentNode.classList.remove('onmouseover');
+		}
+	})
+	
+	function detailView(bid){
+		location.href = '${contextPath}/board/detailView?bid=' + bid;
+	}
+	
+	</script>
+    
+
+    <script>
+        function toggleBlueColor(event) {
+            const element = event.target;
+            const alreadyBlue = element.classList.contains('blue');
+
+            // 중복 클릭 방지
+            if (alreadyBlue) {
+                element.classList.remove('blue');
+            } else {
+                // 다른 요소에서 파란색 제거
+                const elements = document.querySelectorAll('.Notice li, .navBar li');
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].classList.remove('blue');
+                }
+                element.classList.add('blue');
+            }
+        }	
+    </script>
 </body>
 </html>
